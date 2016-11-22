@@ -1,0 +1,22 @@
+#!/bin/sh
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/care_site.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/condition_occurrence.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/death.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/device_cost.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/device_exposure.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/drug_cost.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/drug_exposure.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/location.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/md5sums.txt &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/measurement_occurrence.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/observation.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/observation_period.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/payer_plan_period.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/person.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/procedure_cost.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/procedure_occurrence.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/provider.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/specimen.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.1/synpuf_1.zip &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.0/visit_cost.csv.gz &
+wget ftp://ftp.ohdsi.org/synpuf/1.0.1/visit_occurrence.csv.gz &
