@@ -1,0 +1,841 @@
+Key: 81.08
+code, count, description
+99859,78252,Other postoperative infection
+33818,98028,Other acute postoperative pain
+99649,15627,Other mechanical complication of other internal orthopedic device, implant, and graft
+99812,28628,Hematoma complicating a procedure
+0389,358865, Unspecified septicemia
+41519,325149,Other pulmonary embolism and infarction
+99813,12634,Seroma complicating a procedure
+7242,3113637, Lumbago
+99709,3813,Other nervous system complications
+99832,23026,Disruption of external operation (surgical) wound
+99667,11784,Infection and inflammatory reaction due to other internal orthopedic device, implant, and graft
+45341,64543,Acute venous embolism and thrombosis of deep vessels of proximal lower extremity
+00845,127204,Intestinal infection due to Clostridium difficile
+99851,5852,Infected postoperative seroma
+9974,0,
+41511,37486,Iatrogenic pulmonary embolism and infarction
+7244,1308791, Thoracic or lumbosacral neuritis or radiculitis, unspecified
+72402,936989,Spinal stenosis, lumbar region, without neurogenic claudication
+5601,111087, Paralytic ileus
+7245,958379, Backache, unspecified
+99678,17983,Other complications due to other internal orthopedic device, implant, and graft
+9972,0, Peripheral vascular complications, not elsewhere classified
+29281,11235,Drug-induced delirium
+45342,46480,Acute venous embolism and thrombosis of deep vessels of distal lower extremity
+8054,0, Closed fracture of lumbar vertebra without mention of spinal cord injury
+72210,573224,Displacement of lumbar intervertebral disc without myelopathy
+5070,241408, Pneumonitis due to inhalation of food or vomitus
+99701,3212,Central nervous system complication
+78062,6490,Postprocedural fever
+99831,7462,Disruption of internal operation (surgical) wound
+9975,0, Urinary complications, not elsewhere classified
+45340,249344,Acute venous embolism and thrombosis of unspecified deep vessels of lower extremity
+5789,0, Hemorrhage of gastrointestinal tract, unspecified
+56400,559435,Constipation, unspecified
+34931,3351,Accidental puncture or laceration of dura during a procedure
+72283,244416,Postlaminectomy syndrome, lumbar region
+7384,105915, Acquired spondylolisthesis
+2851,229367, Acute posthemorrhagic anemia
+99889,11071,Other specified complications of procedures not elsewhere classified
+7213,774706, Lumbosacral spondylosis without myelopathy
+56409,40910,Other constipation
+99830,5390,Disruption of wound, unspecified
+99640,20727,Unspecified mechanical complication of internal orthopedic device, implant, and graft
+33828,12776,Other chronic postoperative pain
+99883,45354,Non-healing surgical wound
+71945,1049238,Pain in joint, pelvic region and thigh
+99811,28198,Hemorrhage complicating a procedure
+33819,34306,Other acute pain
+99779,3019,Vascular complications of other vessels
+99674,35886,Other complications due to other vascular device, implant, and graft
+75612,59447,Spondylolisthesis
+3241,0, Intraspinal abscess
+99663,6212,Infection and inflammatory reaction due to nervous system device, implant, and graft
+45829,18340,Other iatrogenic hypotension
+7248,190514, Other symptoms referable to back
+9962,0, Mechanical complication of nervous system device, implant, and graft
+99679,9920,Other complications due to other internal prosthetic device, implant, and graft
+0388,22408, Other specified septicemias
+99799,5837,Complications affecting other specified body systems, not elsewhere classified
+73028,20993,Unspecified osteomyelitis, other specified sites
+34939,264,Other dural tear
+7907,0, Bacteremia
+9654,0, Poisoning by aromatic analgesics, not elsewhere classified
+72293,125739,Other and unspecified disc disorder, lumbar region
+99702,5133,Iatrogenic cerebrovascular infarction or hemorrhage
+99666,34501,Infection and inflammatory reaction due to internal joint prosthesis
+72142,95944,Spondylosis with myelopathy, lumbar region
+99642,18924,Dislocation of prosthetic joint
+99675,5224,Other complications due to nervous system device, implant, and graft
+99939,3489,Infection following other infusion, injection, transfusion, or vaccination
+03810,16504,Staphylococcal septicemia, unspecified
+48242,47506,Methicillin resistant pneumonia due to Staphylococcus aureus
+99659,19075,Mechanical complication due to other implant and internal device, not elsewhere classified
+9982,0, Accidental puncture or laceration during a procedure, not elsewhere classified
+72992,20570,Nontraumatic hematoma of soft tissue
+9986,5416, Persistent postoperative fistula
+7231,0, Cervicalgia
+03819,15991,Other staphylococcal septicemia
+3209,0, Meningitis due to unspecified bacterium
+99931,16912,Other and unspecified infection due to central venous catheter
+5121,20121, Iatrogenic pneumothorax
+99644,11399,Peri-prosthetic fracture around prosthetic joint
+9678,1409, Poisoning by other sedatives and hypnotics
+99669,9726,Infection and inflammatory reaction due to other internal prosthetic device, implant, and graft
+78722,56999,Dysphagia, oropharyngeal phase
+99641,15794,Mechanical loosening of prosthetic joint
+99643,13002,Broken prosthetic joint implant
+45383,24326,Acute venous embolism and thrombosis of upper extremity, unspecified
+9583,23440, Posttraumatic wound infection not elsewhere classified
+9659,640, Poisoning by unspecified analgesic and antipyretic
+99665,6018,Infection and inflammatory reaction due to other genitourinary device, implant, and graft
+99647,10957,Other mechanical complication of prosthetic joint implant
+99989,3366,Other transfusion reaction
+7292,157954, Neuralgia, neuritis, and radiculitis, unspecified
+9694,5435, Poisoning by benzodiazepine-based tranquilizers
+99660,9567,Infection and inflammatory reaction due to unspecified device, implant, and graft
+7220,225548, Displacement of cervical intervertebral disc without myelopathy
+48241,25899,Methicillin susceptible pneumonia due to Staphylococcus aureus
+Total Count For This procedure: 13367140
+
+Key: 81.02
+code, count, description
+99812,28628,Hematoma complicating a procedure
+5070,241408, Pneumonitis due to inhalation of food or vomitus
+99859,78252,Other postoperative infection
+0389,358865, Unspecified septicemia
+99649,15627,Other mechanical complication of other internal orthopedic device, implant, and graft
+99889,11071,Other specified complications of procedures not elsewhere classified
+41519,325149,Other pulmonary embolism and infarction
+99813,12634,Seroma complicating a procedure
+33818,98028,Other acute postoperative pain
+99799,5837,Complications affecting other specified body systems, not elsewhere classified
+99709,3813,Other nervous system complications
+72402,936989,Spinal stenosis, lumbar region, without neurogenic claudication
+41511,37486,Iatrogenic pulmonary embolism and infarction
+7231,0, Cervicalgia
+99678,17983,Other complications due to other internal orthopedic device, implant, and graft
+45341,64543,Acute venous embolism and thrombosis of deep vessels of proximal lower extremity
+72210,573224,Displacement of lumbar intervertebral disc without myelopathy
+45342,46480,Acute venous embolism and thrombosis of deep vessels of distal lower extremity
+7842,0, Swelling, mass, or lump in head and neck
+56400,559435,Constipation, unspecified
+5601,111087, Paralytic ileus
+47825,14177,Edema of pharynx or nasopharynx
+7220,225548, Displacement of cervical intervertebral disc without myelopathy
+9974,0,
+7384,105915, Acquired spondylolisthesis
+29281,11235,Drug-induced delirium
+78062,6490,Postprocedural fever
+00845,127204,Intestinal infection due to Clostridium difficile
+56409,40910,Other constipation
+99851,5852,Infected postoperative seroma
+7213,774706, Lumbosacral spondylosis without myelopathy
+45340,249344,Acute venous embolism and thrombosis of unspecified deep vessels of lower extremity
+5789,0, Hemorrhage of gastrointestinal tract, unspecified
+99667,11784,Infection and inflammatory reaction due to other internal orthopedic device, implant, and graft
+75612,59447,Spondylolisthesis
+78722,56999,Dysphagia, oropharyngeal phase
+45829,18340,Other iatrogenic hypotension
+9972,0, Peripheral vascular complications, not elsewhere classified
+34931,3351,Accidental puncture or laceration of dura during a procedure
+99640,20727,Unspecified mechanical complication of internal orthopedic device, implant, and graft
+99779,3019,Vascular complications of other vessels
+99701,3212,Central nervous system complication
+47831,0,Unilateral paralysis of vocal cords or larynx, partial
+7907,0, Bacteremia
+0388,22408, Other specified septicemias
+9982,0, Accidental puncture or laceration during a procedure, not elsewhere classified
+7242,3113637, Lumbago
+99679,9920,Other complications due to other internal prosthetic device, implant, and graft
+9694,5435, Poisoning by benzodiazepine-based tranquilizers
+9975,0, Urinary complications, not elsewhere classified
+99702,5133,Iatrogenic cerebrovascular infarction or hemorrhage
+99832,23026,Disruption of external operation (surgical) wound
+99677,19791,Other complications due to internal joint prosthesis
+99831,7462,Disruption of internal operation (surgical) wound
+99643,13002,Broken prosthetic joint implant
+99641,15794,Mechanical loosening of prosthetic joint
+99675,5224,Other complications due to nervous system device, implant, and graft
+99642,18924,Dislocation of prosthetic joint
+03819,15991,Other staphylococcal septicemia
+71945,1049238,Pain in joint, pelvic region and thigh
+72991,16564,Post-traumatic seroma
+73028,20993,Unspecified osteomyelitis, other specified sites
+48242,47506,Methicillin resistant pneumonia due to Staphylococcus aureus
+99647,10957,Other mechanical complication of prosthetic joint implant
+72293,125739,Other and unspecified disc disorder, lumbar region
+99811,28198,Hemorrhage complicating a procedure
+99989,3366,Other transfusion reaction
+7292,157954, Neuralgia, neuritis, and radiculitis, unspecified
+03810,16504,Staphylococcal septicemia, unspecified
+9962,0, Mechanical complication of nervous system device, implant, and graft
+99669,9726,Infection and inflammatory reaction due to other internal prosthetic device, implant, and graft
+3209,0, Meningitis due to unspecified bacterium
+99674,35886,Other complications due to other vascular device, implant, and graft
+99644,11399,Peri-prosthetic fracture around prosthetic joint
+9986,5416, Persistent postoperative fistula
+2851,229367, Acute posthemorrhagic anemia
+Total Count For This procedure: 10309359
+
+Key: 51.23
+code, count, description
+99859,78252,Other postoperative infection
+5770,173231, Acute pancreatitis
+0389,358865, Unspecified septicemia
+9974,0,
+99749,0,Other digestive system complications
+00845,127204,Intestinal infection due to Clostridium difficile
+41519,325149,Other pulmonary embolism and infarction
+99812,28628,Hematoma complicating a procedure
+78900,1651121,Abdominal pain, unspecified site
+99811,28198,Hemorrhage complicating a procedure
+99741,0,Retained cholelithiasis following cholecystectomy
+5609,215684, Unspecified intestinal obstruction
+78901,248285,Abdominal pain, right upper quadrant
+56722,26728,Peritoneal abscess
+33818,98028,Other acute postoperative pain
+5762,40445, Obstruction of bile duct
+45341,64543,Acute venous embolism and thrombosis of deep vessels of proximal lower extremity
+5768,42200, Other specified disorders of biliary tract
+03842,28478,Septicemia due to escherichia coli [E. coli]
+56400,559435,Constipation, unspecified
+99739,10530,Other respiratory complications
+5761,25310, Cholangitis
+78909,364257,Abdominal pain, other specified site
+78906,347112,Abdominal pain, epigastric
+56081,46102,Intestinal or peritoneal adhesions with obstruction (postoperative) (postinfection)
+41511,37486,Iatrogenic pulmonary embolism and infarction
+55221,14520,Incisional ventral hernia with obstruction
+03849,21870,Other septicemia due to gram-negative organisms
+45342,46480,Acute venous embolism and thrombosis of deep vessels of distal lower extremity
+2851,229367, Acute posthemorrhagic anemia
+5720,25108, Abscess of liver
+0380,21965, Streptococcal septicemia
+45340,249344,Acute venous embolism and thrombosis of unspecified deep vessels of lower extremity
+0088,25614, Intestinal infection due to other organism, not elsewhere classified
+78062,6490,Postprocedural fever
+99889,11071,Other specified complications of procedures not elsewhere classified
+99813,12634,Seroma complicating a procedure
+9975,0, Urinary complications, not elsewhere classified
+99851,5852,Infected postoperative seroma
+9982,0, Accidental puncture or laceration during a procedure, not elsewhere classified
+03812,18770,Methicillin resistant Staphylococcus aureus septicemia
+56032,815,Fecal impaction
+45829,18340,Other iatrogenic hypotension
+56409,40910,Other constipation
+7907,0, Bacteremia
+9971,0, Cardiac complications, not elsewhere classified
+78959,175038,Other ascites
+5643,2446, Vomiting following gastrointestinal surgery
+99931,16912,Other and unspecified infection due to central venous catheter
+44422,62779,Arterial embolism and thrombosis of lower extremity
+56089,35447,Other specified intestinal obstruction
+99669,9726,Infection and inflammatory reaction due to other internal prosthetic device, implant, and graft
+78907,392168,Abdominal pain, generalized
+03843,12907,Septicemia due to pseudomonas
+99662,47254,Infection and inflammatory reaction due to other vascular device, implant, and graft
+99669,9726,Infection and inflammatory reaction due to other internal prosthetic device, implant, and graft
+48242,47506,Methicillin resistant pneumonia due to Staphylococcus aureus
+0388,22408, Other specified septicemias
+0383,11026, Septicemia due to anaerobes
+56039,45630,Other impaction of intestine
+0090,11987, Infectious colitis, enteritis, and gastroenteritis
+56889,18161,Other specified disorders of peritoneum
+78903,192818,Abdominal pain, right lower quadrant
+9986,5416, Persistent postoperative fistula
+56881,17832,Hemoperitoneum (nontraumatic)
+7824,0, Jaundice, unspecified, not of newborn
+72992,20570,Nontraumatic hematoma of soft tissue
+56781,1641,Choleperitonitis
+56983,31801,Perforation of intestine
+4829,0, Bacterial pneumonia, unspecified
+03811,30676,Methicillin susceptible Staphylococcus aureus septicemia
+99831,7462,Disruption of internal operation (surgical) wound
+78904,212785,Abdominal pain, left lower quadrant
+78652,202277,Painful respiration
+99939,3489,Infection following other infusion, injection, transfusion, or vaccination
+57420,212882,Calculus of gallbladder without mention of cholecystitis, without mention of obstruction
+7873,0, Flatulence, eructation, and gas pain
+99932,0,Bloodstream infection due to central venous catheter
+56723,3840,Spontaneous bacterial peritonitis
+03840,20301,Septicemia due to gram-negative organism, unspecified
+5644,3003, Other postoperative functional disorders
+78902,120617,Abdominal pain, left upper quadrant
+45382,15814,Acute venous embolism and thrombosis of deep veins of upper extremity
+57490,9909,Calculus of gallbladder and bile duct without cholecystitis, without mention of obstruction
+99832,23026,Disruption of external operation (surgical) wound
+0382,11884, Pneumococcal septicemia [Streptococcus pneumoniae septicemia]
+45383,24326,Acute venous embolism and thrombosis of upper extremity, unspecified
+5758,35394, Other specified disorders of gallbladder
+57491,7873,Calculus of gallbladder and bile duct without cholecystitis, with obstruction
+4536,12262, Venous embolism and thrombosis of superficial vessels of lower extremity
+03810,16504,Staphylococcal septicemia, unspecified
+5680,34081, Peritoneal adhesions (postoperative) (postinfection)
+99591,258985,Sepsis
+5121,20121, Iatrogenic pneumothorax
+45381,24428,Acute venous embolism and thrombosis of superficial veins of upper extremity
+57421,10158,Calculus of gallbladder without mention of cholecystitis, with obstruction
+78905,103109,Abdominal pain, periumbilic
+45386,10427,Acute venous embolism and thrombosis of internal jugular veins
+00842,1582,Intestinal infection due to pseudomonas
+48241,25899,Methicillin susceptible pneumonia due to Staphylococcus aureus
+5793,0, Other and unspecified postsurgical nonabsorption
+03844,8870,Septicemia due to serratia
+99883,45354,Non-healing surgical wound
+86401,1166,Injury to liver without mention of open wound into cavity, hematoma and contusion
+99702,5133,Iatrogenic cerebrovascular infarction or hemorrhage
+0091,0, Colitis, enteritis, and gastroenteritis of presumed infectious origin
+48289,38809,Pneumonia due to other specified bacteria
+33828,12776,Other chronic postoperative pain
+33819,34306,Other acute pain
+99830,5390,Disruption of wound, unspecified
+72991,16564,Post-traumatic seroma
+5752,9273, Obstruction of gallbladder
+00841,1233,Intestinal infection due to staphylococcus
+Total Count For This procedure: 8507608
+
+Key: 81.07
+code, count, description
+99859,78252,Other postoperative infection
+0389,358865, Unspecified septicemia
+99812,28628,Hematoma complicating a procedure
+41519,325149,Other pulmonary embolism and infarction
+33818,98028,Other acute postoperative pain
+99813,12634,Seroma complicating a procedure
+99649,15627,Other mechanical complication of other internal orthopedic device, implant, and graft
+99709,3813,Other nervous system complications
+99832,23026,Disruption of external operation (surgical) wound
+99667,11784,Infection and inflammatory reaction due to other internal orthopedic device, implant, and graft
+99851,5852,Infected postoperative seroma
+7242,3113637, Lumbago
+41511,37486,Iatrogenic pulmonary embolism and infarction
+00845,127204,Intestinal infection due to Clostridium difficile
+7244,1308791, Thoracic or lumbosacral neuritis or radiculitis, unspecified
+72402,936989,Spinal stenosis, lumbar region, without neurogenic claudication
+5601,111087, Paralytic ileus
+45341,64543,Acute venous embolism and thrombosis of deep vessels of proximal lower extremity
+9972,0, Peripheral vascular complications, not elsewhere classified
+7245,958379, Backache, unspecified
+78062,6490,Postprocedural fever
+99701,3212,Central nervous system complication
+45342,46480,Acute venous embolism and thrombosis of deep vessels of distal lower extremity
+29281,11235,Drug-induced delirium
+99831,7462,Disruption of internal operation (surgical) wound
+5070,241408, Pneumonitis due to inhalation of food or vomitus
+72210,573224,Displacement of lumbar intervertebral disc without myelopathy
+8054,0, Closed fracture of lumbar vertebra without mention of spinal cord injury
+45340,249344,Acute venous embolism and thrombosis of unspecified deep vessels of lower extremity
+9974,0,
+99678,17983,Other complications due to other internal orthopedic device, implant, and graft
+56400,559435,Constipation, unspecified
+34931,3351,Accidental puncture or laceration of dura during a procedure
+5789,0, Hemorrhage of gastrointestinal tract, unspecified
+2851,229367, Acute posthemorrhagic anemia
+99883,45354,Non-healing surgical wound
+56409,40910,Other constipation
+99830,5390,Disruption of wound, unspecified
+7213,774706, Lumbosacral spondylosis without myelopathy
+99889,11071,Other specified complications of procedures not elsewhere classified
+9975,0, Urinary complications, not elsewhere classified
+72283,244416,Postlaminectomy syndrome, lumbar region
+99640,20727,Unspecified mechanical complication of internal orthopedic device, implant, and graft
+45829,18340,Other iatrogenic hypotension
+7384,105915, Acquired spondylolisthesis
+75612,59447,Spondylolisthesis
+7907,0, Bacteremia
+33819,34306,Other acute pain
+7248,190514, Other symptoms referable to back
+99811,28198,Hemorrhage complicating a procedure
+33828,12776,Other chronic postoperative pain
+0388,22408, Other specified septicemias
+9694,5435, Poisoning by benzodiazepine-based tranquilizers
+3241,0, Intraspinal abscess
+99675,5224,Other complications due to nervous system device, implant, and graft
+99939,3489,Infection following other infusion, injection, transfusion, or vaccination
+9986,5416, Persistent postoperative fistula
+99663,6212,Infection and inflammatory reaction due to nervous system device, implant, and graft
+99674,35886,Other complications due to other vascular device, implant, and graft
+99669,9726,Infection and inflammatory reaction due to other internal prosthetic device, implant, and graft
+72992,20570,Nontraumatic hematoma of soft tissue
+34939,264,Other dural tear
+99677,19791,Other complications due to internal joint prosthesis
+99666,34501,Infection and inflammatory reaction due to internal joint prosthesis
+99642,18924,Dislocation of prosthetic joint
+48242,47506,Methicillin resistant pneumonia due to Staphylococcus aureus
+03819,15991,Other staphylococcal septicemia
+72142,95944,Spondylosis with myelopathy, lumbar region
+99647,10957,Other mechanical complication of prosthetic joint implant
+9654,0, Poisoning by aromatic analgesics, not elsewhere classified
+9678,1409, Poisoning by other sedatives and hypnotics
+71945,1049238,Pain in joint, pelvic region and thigh
+72293,125739,Other and unspecified disc disorder, lumbar region
+3209,0, Meningitis due to unspecified bacterium
+9583,23440, Posttraumatic wound infection not elsewhere classified
+9659,640, Poisoning by unspecified analgesic and antipyretic
+99779,3019,Vascular complications of other vessels
+99799,5837,Complications affecting other specified body systems, not elsewhere classified
+7231,0, Cervicalgia
+9962,0, Mechanical complication of nervous system device, implant, and graft
+7220,225548, Displacement of cervical intervertebral disc without myelopathy
+73028,20993,Unspecified osteomyelitis, other specified sites
+99702,5133,Iatrogenic cerebrovascular infarction or hemorrhage
+72991,16564,Post-traumatic seroma
+99931,16912,Other and unspecified infection due to central venous catheter
+7292,157954, Neuralgia, neuritis, and radiculitis, unspecified
+99644,11399,Peri-prosthetic fracture around prosthetic joint
+99679,9920,Other complications due to other internal prosthetic device, implant, and graft
+99659,19075,Mechanical complication due to other implant and internal device, not elsewhere classified
+Total Count For This procedure: 13211899
+
+Key: 60.29
+code, count, description
+99811,28198,Hemorrhage complicating a procedure
+5990,3265322, Urinary tract infection, site not specified
+59971,128982,Gross hematuria
+0389,358865, Unspecified septicemia
+9975,0, Urinary complications, not elsewhere classified
+59970,391098,Hematuria, unspecified
+5967,7525, Hemorrhage into bladder wall
+99664,15433,Infection and inflammatory reaction due to indwelling urinary catheter
+41519,325149,Other pulmonary embolism and infarction
+60001,552639,Hypertrophy (benign) of prostate with urinary obstruction and other lower urinary tract symptoms (LUTS)
+99859,78252,Other postoperative infection
+00845,127204,Intestinal infection due to Clostridium difficile
+45341,64543,Acute venous embolism and thrombosis of deep vessels of proximal lower extremity
+2851,229367, Acute posthemorrhagic anemia
+99676,11658,Other complications due to genitourinary device, implant, and graft
+78820,338519,Retention of urine, unspecified
+0380,21965, Streptococcal septicemia
+03842,28478,Septicemia due to escherichia coli [E. coli]
+6021,0, Congestion or hemorrhage of prostate
+45342,46480,Acute venous embolism and thrombosis of deep vessels of distal lower extremity
+60490,23341,Orchitis and epididymitis, unspecified
+45340,249344,Acute venous embolism and thrombosis of unspecified deep vessels of lower extremity
+41511,37486,Iatrogenic pulmonary embolism and infarction
+03849,21870,Other septicemia due to gram-negative organisms
+5959,118963, Cystitis, unspecified
+99631,11154,Mechanical complication due to urethral (indwelling) catheter
+99812,28628,Hematoma complicating a procedure
+5609,215684, Unspecified intestinal obstruction
+8670,0, Injury to bladder and urethra, without mention of open wound into cavity
+03812,18770,Methicillin resistant Staphylococcus aureus septicemia
+5601,111087, Paralytic ileus
+60499,5790,Other orchitis, epididymitis, and epididymo-orchitis, without mention of abscess
+5789,0, Hemorrhage of gastrointestinal tract, unspecified
+5960,82283, Bladder neck obstruction
+59080,94467,Pyelonephritis, unspecified
+59969,23130,Urinary obstruction, not elsewhere classified
+56400,559435,Constipation, unspecified
+5921,0, Calculus of ureter
+78829,39818,Other specified retention of urine
+59960,55528,Urinary obstruction, unspecified
+03843,12907,Septicemia due to pseudomonas
+0388,22408, Other specified septicemias
+56081,46102,Intestinal or peritoneal adhesions with obstruction (postoperative) (postinfection)
+44422,62779,Arterial embolism and thrombosis of lower extremity
+99665,6018,Infection and inflammatory reaction due to other genitourinary device, implant, and graft
+55010,13690,Inguinal hernia, with obstruction, without mention of gangrene, unilateral or unspecified (not specified as recurrent)
+03819,15991,Other staphylococcal septicemia
+591,0,  Hydronephrosis
+5941,51194, Other calculus in bladder
+03811,30676,Methicillin susceptible Staphylococcus aureus septicemia
+60091,54134,Hyperplasia of prostate, unspecified, with urinary obstruction and other lower urinary symptoms (LUTS)
+33818,98028,Other acute postoperative pain
+45829,18340,Other iatrogenic hypotension
+5934,38057, Other ureteric obstruction
+99639,7828,Other mechanical complication of genitourinary device, implant, and graft
+6019,0, Prostatitis, unspecified
+60021,64852,Benign localized hyperplasia of prostate with urinary obstruction and other lower urinary tract symptoms (LUTS)
+55090,110734,Inguinal hernia, without mention of obstruction or gangrene, unilateral or unspecified (not specified as recurrent)
+78900,1651121,Abdominal pain, unspecified site
+78062,6490,Postprocedural fever
+6010,29721, Acute prostatitis
+9974,0,
+03840,20301,Septicemia due to gram-negative organism, unspecified
+99931,16912,Other and unspecified infection due to central venous catheter
+99889,11071,Other specified complications of procedures not elsewhere classified
+48283,25268,Pneumonia due to other gram-negative bacteria
+03810,16504,Staphylococcal septicemia, unspecified
+9982,0, Accidental puncture or laceration during a procedure, not elsewhere classified
+5693,0, Hemorrhage of rectum and anus
+56089,35447,Other specified intestinal obstruction
+6011,0, Chronic prostatitis
+99659,19075,Mechanical complication due to other implant and internal device, not elsewhere classified
+99799,5837,Complications affecting other specified body systems, not elsewhere classified
+99739,10530,Other respiratory complications
+60020,56963,Benign localized hyperplasia of prostate without urinary obstruction and other lower urinary tract symptoms (LUTS)
+9989,8287, Unspecified complication of procedure, not elsewhere classified
+55092,17718,Inguinal hernia, without mention of obstruction or gangrene, bilateral (not specified as recurrent)
+5961,9952, Intestinovesical fistula
+48242,47506,Methicillin resistant pneumonia due to Staphylococcus aureus
+44489,6236,Embolism and thrombosis of other specified artery
+9980,4852,
+6028,6160, Other specified disorders of prostate
+45381,24428,Acute venous embolism and thrombosis of superficial veins of upper extremity
+44481,10617,Embolism and thrombosis of iliac artery
+45119,104533,Phlebitis and thrombophlebitis of deep veins of lower extremities, other
+Total Count For This procedure: 10515722
+
+Key: 60.5
+code, count, description
+9974,0,
+99859,78252,Other postoperative infection
+99749,0,Other digestive system complications
+41519,325149,Other pulmonary embolism and infarction
+9975,0, Urinary complications, not elsewhere classified
+41511,37486,Iatrogenic pulmonary embolism and infarction
+5990,3265322, Urinary tract infection, site not specified
+0389,358865, Unspecified septicemia
+99812,28628,Hematoma complicating a procedure
+99811,28198,Hemorrhage complicating a procedure
+5601,111087, Paralytic ileus
+45341,64543,Acute venous embolism and thrombosis of deep vessels of proximal lower extremity
+9972,0, Peripheral vascular complications, not elsewhere classified
+45342,46480,Acute venous embolism and thrombosis of deep vessels of distal lower extremity
+99831,7462,Disruption of internal operation (surgical) wound
+99664,15433,Infection and inflammatory reaction due to indwelling urinary catheter
+56081,46102,Intestinal or peritoneal adhesions with obstruction (postoperative) (postinfection)
+9986,5416, Persistent postoperative fistula
+78062,6490,Postprocedural fever
+5609,215684, Unspecified intestinal obstruction
+00845,127204,Intestinal infection due to Clostridium difficile
+55221,14520,Incisional ventral hernia with obstruction
+59971,128982,Gross hematuria
+45340,249344,Acute venous embolism and thrombosis of unspecified deep vessels of lower extremity
+03842,28478,Septicemia due to escherichia coli [E. coli]
+78900,1651121,Abdominal pain, unspecified site
+99889,11071,Other specified complications of procedures not elsewhere classified
+99851,5852,Infected postoperative seroma
+99631,11154,Mechanical complication due to urethral (indwelling) catheter
+99832,23026,Disruption of external operation (surgical) wound
+33818,98028,Other acute postoperative pain
+03849,21870,Other septicemia due to gram-negative organisms
+99676,11658,Other complications due to genitourinary device, implant, and graft
+56400,559435,Constipation, unspecified
+2851,229367, Acute posthemorrhagic anemia
+60490,23341,Orchitis and epididymitis, unspecified
+99739,10530,Other respiratory complications
+9982,0, Accidental puncture or laceration during a procedure, not elsewhere classified
+4536,12262, Venous embolism and thrombosis of superficial vessels of lower extremity
+56089,35447,Other specified intestinal obstruction
+5921,0, Calculus of ureter
+99799,5837,Complications affecting other specified body systems, not elsewhere classified
+60499,5790,Other orchitis, epididymitis, and epididymo-orchitis, without mention of abscess
+591,0,  Hydronephrosis
+78820,338519,Retention of urine, unspecified
+99813,12634,Seroma complicating a procedure
+55010,13690,Inguinal hernia, with obstruction, without mention of gangrene, unilateral or unspecified (not specified as recurrent)
+59970,391098,Hematuria, unspecified
+5959,118963, Cystitis, unspecified
+5789,0, Hemorrhage of gastrointestinal tract, unspecified
+59080,94467,Pyelonephritis, unspecified
+0380,21965, Streptococcal septicemia
+03843,12907,Septicemia due to pseudomonas
+5934,38057, Other ureteric obstruction
+5961,9952, Intestinovesical fistula
+03840,20301,Septicemia due to gram-negative organism, unspecified
+5967,7525, Hemorrhage into bladder wall
+8670,0, Injury to bladder and urethra, without mention of open wound into cavity
+99830,5390,Disruption of wound, unspecified
+03812,18770,Methicillin resistant Staphylococcus aureus septicemia
+78829,39818,Other specified retention of urine
+99639,7828,Other mechanical complication of genitourinary device, implant, and graft
+4829,0, Bacterial pneumonia, unspecified
+44422,62779,Arterial embolism and thrombosis of lower extremity
+99665,6018,Infection and inflammatory reaction due to other genitourinary device, implant, and graft
+48283,25268,Pneumonia due to other gram-negative bacteria
+99659,19075,Mechanical complication due to other implant and internal device, not elsewhere classified
+0383,11026, Septicemia due to anaerobes
+45119,104533,Phlebitis and thrombophlebitis of deep veins of lower extremities, other
+5960,82283, Bladder neck obstruction
+03844,8870,Septicemia due to serratia
+0388,22408, Other specified septicemias
+55090,110734,Inguinal hernia, without mention of obstruction or gangrene, unilateral or unspecified (not specified as recurrent)
+59960,55528,Urinary obstruction, unspecified
+2875,254225, Thrombocytopenia, unspecified
+5693,0, Hemorrhage of rectum and anus
+44481,10617,Embolism and thrombosis of iliac artery
+03811,30676,Methicillin susceptible Staphylococcus aureus septicemia
+4590,0, Hemorrhage, unspecified
+0382,11884, Pneumococcal septicemia [Streptococcus pneumoniae septicemia]
+5121,20121, Iatrogenic pneumothorax
+99939,3489,Infection following other infusion, injection, transfusion, or vaccination
+45829,18340,Other iatrogenic hypotension
+03810,16504,Staphylococcal septicemia, unspecified
+55092,17718,Inguinal hernia, without mention of obstruction or gangrene, bilateral (not specified as recurrent)
+03819,15991,Other staphylococcal septicemia
+48242,47506,Methicillin resistant pneumonia due to Staphylococcus aureus
+6012,0, Abscess of prostate
+Total Count For This procedure: 10012391
+
+Key: 81.51
+code, count, description
+99666,34501,Infection and inflammatory reaction due to internal joint prosthesis
+99859,78252,Other postoperative infection
+99642,18924,Dislocation of prosthetic joint
+99644,11399,Peri-prosthetic fracture around prosthetic joint
+99812,28628,Hematoma complicating a procedure
+0389,358865, Unspecified septicemia
+99677,19791,Other complications due to internal joint prosthesis
+41519,325149,Other pulmonary embolism and infarction
+6826,375140, Cellulitis and abscess of leg, except foot
+2851,229367, Acute posthemorrhagic anemia
+00845,127204,Intestinal infection due to Clostridium difficile
+82020,31778,Closed fracture of trochanteric section of neck of femur
+41511,37486,Iatrogenic pulmonary embolism and infarction
+45341,64543,Acute venous embolism and thrombosis of deep vessels of proximal lower extremity
+9972,0, Peripheral vascular complications, not elsewhere classified
+99813,12634,Seroma complicating a procedure
+82101,22428,Closed fracture of shaft of femur
+99851,5852,Infected postoperative seroma
+82100,54289,Closed fracture of unspecified part of femur
+9974,0,
+99641,15794,Mechanical loosening of prosthetic joint
+99832,23026,Disruption of external operation (surgical) wound
+8208,330952, Closed fracture of unspecified part of neck of femur
+99647,10957,Other mechanical complication of prosthetic joint implant
+33818,98028,Other acute postoperative pain
+03842,28478,Septicemia due to escherichia coli [E. coli]
+99667,11784,Infection and inflammatory reaction due to other internal orthopedic device, implant, and graft
+45342,46480,Acute venous embolism and thrombosis of deep vessels of distal lower extremity
+99643,13002,Broken prosthetic joint implant
+71945,1049238,Pain in joint, pelvic region and thigh
+72992,20570,Nontraumatic hematoma of soft tissue
+99811,28198,Hemorrhage complicating a procedure
+45340,249344,Acute venous embolism and thrombosis of unspecified deep vessels of lower extremity
+99664,15433,Infection and inflammatory reaction due to indwelling urinary catheter
+99831,7462,Disruption of internal operation (surgical) wound
+82009,60754,Other closed transcervical fracture of neck of femur
+82021,147658,Closed fracture of intertrochanteric section of neck of femur
+43411,71284,Cerebral embolism with cerebral infarction
+56400,559435,Constipation, unspecified
+99649,15627,Other mechanical complication of other internal orthopedic device, implant, and graft
+03849,21870,Other septicemia due to gram-negative organisms
+9971,0, Cardiac complications, not elsewhere classified
+82022,30029,Closed fracture of subtrochanteric section of neck of femur
+72981,407543,Swelling of limb
+92401,46277,Contusion of hip
+99889,11071,Other specified complications of procedures not elsewhere classified
+99678,17983,Other complications due to other internal orthopedic device, implant, and graft
+99739,10530,Other respiratory complications
+56409,40910,Other constipation
+9975,0, Urinary complications, not elsewhere classified
+45829,18340,Other iatrogenic hypotension
+78062,6490,Postprocedural fever
+99779,3019,Vascular complications of other vessels
+83500,12347,Closed dislocation of hip, unspecified site
+7295,2283695, Pain in limb
+0380,21965, Streptococcal septicemia
+0383,11026, Septicemia due to anaerobes
+70703,151935,Pressure ulcer, lower back
+4590,0, Hemorrhage, unspecified
+99883,45354,Non-healing surgical wound
+48283,25268,Pneumonia due to other gram-negative bacteria
+73314,12150,Pathologic fracture of neck of femur
+03843,12907,Septicemia due to pseudomonas
+4829,0, Bacterial pneumonia, unspecified
+73315,7141,Pathologic fracture of other specified part of femur
+71105,4177,Pyogenic arthritis, pelvic region and thigh
+99830,5390,Disruption of wound, unspecified
+03812,18770,Methicillin resistant Staphylococcus aureus septicemia
+0388,22408, Other specified septicemias
+03811,30676,Methicillin susceptible Staphylococcus aureus septicemia
+48242,47506,Methicillin resistant pneumonia due to Staphylococcus aureus
+44422,62779,Arterial embolism and thrombosis of lower extremity
+99702,5133,Iatrogenic cerebrovascular infarction or hemorrhage
+4536,12262, Venous embolism and thrombosis of superficial vessels of lower extremity
+99640,20727,Unspecified mechanical complication of internal orthopedic device, implant, and graft
+03840,20301,Septicemia due to gram-negative organism, unspecified
+70707,86258,Pressure ulcer, heel
+82129,4831,Other closed fracture of lower end of femur
+82120,17586,Closed fracture of lower end of femur, unspecified part
+82123,12041,Closed supracondylar fracture of femur
+99669,9726,Infection and inflammatory reaction due to other internal prosthetic device, implant, and graft
+99709,3813,Other nervous system complications
+99799,5837,Complications affecting other specified body systems, not elsewhere classified
+99989,3366,Other transfusion reaction
+03844,8870,Septicemia due to serratia
+73396,5158,Stress fracture of femoral neck
+71905,17057,Effusion of joint, pelvic region and thigh
+45352,10536,Chronic venous embolism and thrombosis of deep vessels of distal lower extremity
+99645,5878,Peri-prosthetic osteolysis
+4510,30122, Phlebitis and thrombophlebitis of superficial vessels of lower extremities
+99659,19075,Mechanical complication due to other implant and internal device, not elsewhere classified
+71906,130203,Effusion of joint, lower leg
+03841,8613,Septicemia due to hemophilus influenzae [H. influenzae]
+99931,16912,Other and unspecified infection due to central venous catheter
+99631,11154,Mechanical complication due to urethral (indwelling) catheter
+03819,15991,Other staphylococcal septicemia
+99939,3489,Infection following other infusion, injection, transfusion, or vaccination
+83501,2468,Closed posterior dislocation of hip
+44481,10617,Embolism and thrombosis of iliac artery
+45182,13909,Phlebitis and thrombophlebitis of superficial veins of upper extremities
+48241,25899,Methicillin susceptible pneumonia due to Staphylococcus aureus
+71695,31161,Arthropathy, unspecified, pelvic region and thigh
+45389,20646,Acute venous embolism and thrombosis of other specified veins
+71946,1480083,Pain in joint, lower leg
+0382,11884, Pneumococcal septicemia [Streptococcus pneumoniae septicemia]
+99701,3212,Central nervous system complication
+82003,25857,Closed fracture of base of neck of femur
+99646,6419,Articular bearing surface wear of prosthetic joint
+9980,4852,
+03810,16504,Staphylococcal septicemia, unspecified
+99732,0,Postprocedural aspiration pneumonia
+45111,58675,Phlebitis and thrombophlebitis of femoral vein (deep) (superficial)
+73382,63501,Nonunion of fracture
+71815,9884,Loose body in joint, pelvic region and thigh
+48289,38809,Pneumonia due to other specified bacteria
+99660,9567,Infection and inflammatory reaction due to unspecified device, implant, and graft
+82030,15271,Open fracture of trochanteric section of neck of femur, unspecified
+81220,46299,Closed fracture of unspecified part of humerus
+99932,0,Bloodstream infection due to central venous catheter
+5121,20121, Iatrogenic pneumothorax
+43410,32743,Cerebral embolism without mention of cerebral infarction
+73342,56221,Aseptic necrosis of head and neck of femur
+48240,15940,Pneumonia due to Staphylococcus, unspecified
+99591,258985,Sepsis
+71835,2443,Recurrent dislocation of joint, pelvic region and thigh
+82002,25744,Closed fracture of midcervical section of neck of femur
+Total Count For This procedure: 10821943
+
+Key: 81.54
+code, count, description
+99859,78252,Other postoperative infection
+99666,34501,Infection and inflammatory reaction due to internal joint prosthesis
+6826,375140, Cellulitis and abscess of leg, except foot
+41519,325149,Other pulmonary embolism and infarction
+0389,358865, Unspecified septicemia
+99677,19791,Other complications due to internal joint prosthesis
+99812,28628,Hematoma complicating a procedure
+41511,37486,Iatrogenic pulmonary embolism and infarction
+00845,127204,Intestinal infection due to Clostridium difficile
+99832,23026,Disruption of external operation (surgical) wound
+9972,0, Peripheral vascular complications, not elsewhere classified
+2851,229367, Acute posthemorrhagic anemia
+45341,64543,Acute venous embolism and thrombosis of deep vessels of proximal lower extremity
+99831,7462,Disruption of internal operation (surgical) wound
+45342,46480,Acute venous embolism and thrombosis of deep vessels of distal lower extremity
+33818,98028,Other acute postoperative pain
+99644,11399,Peri-prosthetic fracture around prosthetic joint
+45340,249344,Acute venous embolism and thrombosis of unspecified deep vessels of lower extremity
+99642,18924,Dislocation of prosthetic joint
+99667,11784,Infection and inflammatory reaction due to other internal orthopedic device, implant, and graft
+71916,14531,Hemarthrosis, lower leg
+99811,28198,Hemorrhage complicating a procedure
+78060,476810,Fever, unspecified
+71946,1480083,Pain in joint, lower leg
+9974,0,
+9971,0, Cardiac complications, not elsewhere classified
+2800,271565, Iron deficiency anemia secondary to blood loss (chronic)
+71906,130203,Effusion of joint, lower leg
+99889,11071,Other specified complications of procedures not elsewhere classified
+82123,12041,Closed supracondylar fracture of femur
+43411,71284,Cerebral embolism with cerebral infarction
+78062,6490,Postprocedural fever
+82021,147658,Closed fracture of intertrochanteric section of neck of femur
+99739,10530,Other respiratory complications
+71106,24838,Pyogenic arthritis, lower leg
+99830,5390,Disruption of wound, unspecified
+03849,21870,Other septicemia due to gram-negative organisms
+8220,38688, Closed fracture of patella
+82101,22428,Closed fracture of shaft of femur
+99647,10957,Other mechanical complication of prosthetic joint implant
+72981,407543,Swelling of limb
+45829,18340,Other iatrogenic hypotension
+99883,45354,Non-healing surgical wound
+8208,330952, Closed fracture of unspecified part of neck of femur
+82009,60754,Other closed transcervical fracture of neck of femur
+99678,17983,Other complications due to other internal orthopedic device, implant, and graft
+92411,61994,Contusion of knee
+96509,3690,Poisoning by other opiates and related narcotics
+82120,17586,Closed fracture of lower end of femur, unspecified part
+0383,11026, Septicemia due to anaerobes
+99813,12634,Seroma complicating a procedure
+0380,21965, Streptococcal septicemia
+9975,0, Urinary complications, not elsewhere classified
+71856,14532,Ankylosis of joint, lower leg
+48283,25268,Pneumonia due to other gram-negative bacteria
+7295,2283695, Pain in limb
+99851,5852,Infected postoperative seroma
+27650,122269,Volume depletion, unspecified
+72766,17878,Nontraumatic rupture of patellar tendon
+99649,15627,Other mechanical complication of other internal orthopedic device, implant, and graft
+7907,0, Bacteremia
+44422,62779,Arterial embolism and thrombosis of lower extremity
+99643,13002,Broken prosthetic joint implant
+82300,25186,Closed fracture of upper end of tibia alone
+4829,0, Bacterial pneumonia, unspecified
+03843,12907,Septicemia due to pseudomonas
+8363,0, Dislocation of patella, closed
+0388,22408, Other specified septicemias
+9642,0, Poisoning by anticoagulants
+99641,15794,Mechanical loosening of prosthetic joint
+99833,2340,Disruption of traumatic injury wound repair
+71956,73525,Stiffness of joint, not elsewhere classified, lower leg
+03812,18770,Methicillin resistant Staphylococcus aureus septicemia
+03840,20301,Septicemia due to gram-negative organism, unspecified
+99799,5837,Complications affecting other specified body systems, not elsewhere classified
+48242,47506,Methicillin resistant pneumonia due to Staphylococcus aureus
+99702,5133,Iatrogenic cerebrovascular infarction or hemorrhage
+03819,15991,Other staphylococcal septicemia
+4536,12262, Venous embolism and thrombosis of superficial vessels of lower extremity
+9654,0, Poisoning by aromatic analgesics, not elsewhere classified
+03811,30676,Methicillin susceptible Staphylococcus aureus septicemia
+45119,104533,Phlebitis and thrombophlebitis of deep veins of lower extremities, other
+8910,0, Open wound of knee, leg [except thigh], and ankle, without mention of complication
+99939,3489,Infection following other infusion, injection, transfusion, or vaccination
+99931,16912,Other and unspecified infection due to central venous catheter
+71846,19002,Contracture of joint, lower leg
+99662,47254,Infection and inflammatory reaction due to other vascular device, implant, and graft
+9658,0, Poisoning by other specified analgesics and antipyretics
+92400,12460,Contusion of thigh
+8912,0, Open wound of knee, leg [except thigh], and ankle, with tendon involvement
+9986,5416, Persistent postoperative fistula
+4512,0, Phlebitis and thrombophlebitis of lower extremities, unspecified
+4538,88798,
+71945,1049238,Pain in joint, pelvic region and thigh
+99669,9726,Infection and inflammatory reaction due to other internal prosthetic device, implant, and graft
+45389,20646,Acute venous embolism and thrombosis of other specified veins
+8911,0, Open wound of knee, leg [except thigh], and ankle, complicated
+2875,254225, Thrombocytopenia, unspecified
+71836,3238,Recurrent dislocation of joint, lower leg
+7179,0, Unspecified internal derangement of knee
+48241,25899,Methicillin susceptible pneumonia due to Staphylococcus aureus
+99679,9920,Other complications due to other internal prosthetic device, implant, and graft
+73342,56221,Aseptic necrosis of head and neck of femur
+03810,16504,Staphylococcal septicemia, unspecified
+82302,7570,Closed fracture of upper end of fibula with tibia
+44421,13538,Arterial embolism and thrombosis of upper extremity
+99646,6419,Articular bearing surface wear of prosthetic joint
+4519,0, Phlebitis and thrombophlebitis of unspecified site
+5121,20121, Iatrogenic pneumothorax
+99591,258985,Sepsis
+83650,2565,Dislocation of knee, unspecified, closed
+99989,3366,Other transfusion reaction
+99670,9366,Other complications due to unspecified device, implant, and graft
+99659,19075,Mechanical complication due to other implant and internal device, not elsewhere classified
+99985,0,Delayed hemolytic transfusion reaction, incompatibility unspecified
+45383,24326,Acute venous embolism and thrombosis of upper extremity, unspecified
+45111,58675,Phlebitis and thrombophlebitis of femoral vein (deep) (superficial)
+28749,1100,Other secondary thrombocytopenia
+8221,0, Open fracture of patella
+99640,20727,Unspecified mechanical complication of internal orthopedic device, implant, and graft
+44481,10617,Embolism and thrombosis of iliac artery
+45352,10536,Chronic venous embolism and thrombosis of deep vessels of distal lower extremity
+99709,3813,Other nervous system complications
+0382,11884, Pneumococcal septicemia [Streptococcus pneumoniae septicemia]
+2874,33516,
+71789,6086,Other internal derangement of knee
+99791,19613,Complications affecting other specified body systems, not elsewhere classified, hypertension
+9580,3690, Air embolism
+7388,2670, Acquired deformity of other specified site
+71908,12492,Effusion of joint, other specified sites
+71886,15709,Other joint derangement, not elsewhere classified, lower leg
+99660,9567,Infection and inflammatory reaction due to unspecified device, implant, and graft
+9581,3722, Fat embolism
+Total Count For This procedure: 11142596
+
+Total Count For All Procedures: 87888658
