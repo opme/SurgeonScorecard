@@ -1,4 +1,4 @@
-Key: 81.08
+Procedure: 81.08
 code, count, description
 72402,12199,Spinal stenosis, lumbar region, without neurogenic claudication
 7384,4186, Acquired spondylolisthesis
@@ -8,7 +8,7 @@ code, count, description
 75612,2033,Spondylolisthesis
 Total Count For This procedure: 42950
 
-Key: 81.02
+Procedure: 81.02
 code, count, description
 7210,5004, Cervical spondylosis without myelopathy
 7220,1624, Displacement of cervical intervertebral disc without myelopathy
@@ -17,7 +17,7 @@ code, count, description
 7234,891, Brachial neuritis or radiculitis NOS
 Total Count For This procedure: 12647
 
-Key: 51.23
+Procedure: 51.23
 code, count, description
 57400,5420,Calculus of gallbladder with acute cholecystitis, without mention of obstruction
 57410,6462,Calculus of gallbladder with other cholecystitis, without mention of obstruction
@@ -47,7 +47,7 @@ code, count, description
 5753,426, Hydrops of gallbladder
 Total Count For This procedure: 44871
 
-Key: 81.07
+Procedure: 81.07
 code, count, description
 72402,12199,Spinal stenosis, lumbar region, without neurogenic claudication
 7384,4186, Acquired spondylolisthesis
@@ -60,7 +60,7 @@ code, count, description
 72283,894,Postlaminectomy syndrome, lumbar region
 Total Count For This procedure: 49604
 
-Key: 60.29
+Procedure: 60.29
 code, count, description
 60001,11707,Hypertrophy (benign) of prostate with urinary obstruction and other lower urinary tract symptoms (LUTS)
 60000,45999,Hypertrophy (benign) of prostate without urinary obstruction and other lower urinary tract symptom (LUTS)
@@ -72,19 +72,19 @@ code, count, description
 60010,95,Nodular prostate without urinary obstruction
 Total Count For This procedure: 60063
 
-Key: 60.5
+Procedure: 60.5
 code, count, description
 185,0,  Malignant neoplasm of prostate
 Total Count For This procedure: 0
 
-Key: 81.51
+Procedure: 81.51
 code, count, description
 71535,11906,Osteoarthrosis, localized, not specified whether primary or secondary, pelvic region and thigh
 71595,4374,Osteoarthrosis, unspecified whether generalized or localized, pelvic region and thigh
 71515,1281,Osteoarthrosis, localized, primary, pelvic region and thigh
 Total Count For This procedure: 17561
 
-Key: 81.54
+Procedure: 81.54
 code, count, description
 71536,28755,Osteoarthrosis, localized, not specified whether primary or secondary, lower leg
 71596,10995,Osteoarthrosis, unspecified whether generalized or localized, lower leg
