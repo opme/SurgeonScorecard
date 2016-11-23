@@ -1,4 +1,4 @@
-Key: 81.08
+Procedure: 81.08
 code, count, description
 99859,1,Other postoperative infection
 33818,0,Other acute postoperative pain
@@ -55,7 +55,7 @@ code, count, description
 99663,0,Infection and inflammatory reaction due to nervous system device, implant, and graft
 45829,1,Other iatrogenic hypotension
 7248,1, Other symptoms referable to back
-9962,0, Mechanical complication of nervous system device, implant, and graft
+9962,1, Mechanical complication of nervous system device, implant, and graft
 99679,0,Other complications due to other internal prosthetic device, implant, and graft
 0388,0, Other specified septicemias
 99799,0,Complications affecting other specified body systems, not elsewhere classified
@@ -98,9 +98,9 @@ code, count, description
 99660,0,Infection and inflammatory reaction due to unspecified device, implant, and graft
 7220,0, Displacement of cervical intervertebral disc without myelopathy
 48241,1,Methicillin susceptible pneumonia due to Staphylococcus aureus
-Total Count For This procedure: 50
+Total Count For This procedure: 51
 
-Key: 81.02
+Procedure: 81.02
 code, count, description
 99812,0,Hematoma complicating a procedure
 5070,3, Pneumonitis due to inhalation of food or vomitus
@@ -171,16 +171,16 @@ code, count, description
 99989,0,Other transfusion reaction
 7292,0, Neuralgia, neuritis, and radiculitis, unspecified
 03810,0,Staphylococcal septicemia, unspecified
-9962,0, Mechanical complication of nervous system device, implant, and graft
+9962,1, Mechanical complication of nervous system device, implant, and graft
 99669,0,Infection and inflammatory reaction due to other internal prosthetic device, implant, and graft
 3209,0, Meningitis due to unspecified bacterium
 99674,0,Other complications due to other vascular device, implant, and graft
 99644,0,Peri-prosthetic fracture around prosthetic joint
 9986,0, Persistent postoperative fistula
 2851,1, Acute posthemorrhagic anemia
-Total Count For This procedure: 45
+Total Count For This procedure: 46
 
-Key: 51.23
+Procedure: 51.23
 code, count, description
 99859,1,Other postoperative infection
 5770,2, Acute pancreatitis
@@ -297,7 +297,7 @@ code, count, description
 00841,0,Intestinal infection due to staphylococcus
 Total Count For This procedure: 57
 
-Key: 81.07
+Procedure: 81.07
 code, count, description
 99859,1,Other postoperative infection
 0389,8, Unspecified septicemia
@@ -378,7 +378,7 @@ code, count, description
 99779,0,Vascular complications of other vessels
 99799,0,Complications affecting other specified body systems, not elsewhere classified
 7231,0, Cervicalgia
-9962,0, Mechanical complication of nervous system device, implant, and graft
+9962,1, Mechanical complication of nervous system device, implant, and graft
 7220,0, Displacement of cervical intervertebral disc without myelopathy
 73028,0,Unspecified osteomyelitis, other specified sites
 99702,0,Iatrogenic cerebrovascular infarction or hemorrhage
@@ -388,9 +388,9 @@ code, count, description
 99644,0,Peri-prosthetic fracture around prosthetic joint
 99679,0,Other complications due to other internal prosthetic device, implant, and graft
 99659,0,Mechanical complication due to other implant and internal device, not elsewhere classified
-Total Count For This procedure: 48
+Total Count For This procedure: 49
 
-Key: 60.29
+Procedure: 60.29
 code, count, description
 99811,1,Hemorrhage complicating a procedure
 5990,10, Urinary tract infection, site not specified
@@ -479,7 +479,7 @@ code, count, description
 45119,0,Phlebitis and thrombophlebitis of deep veins of lower extremities, other
 Total Count For This procedure: 55
 
-Key: 60.5
+Procedure: 60.5
 code, count, description
 9974,1,
 99859,1,Other postoperative infection
@@ -571,7 +571,7 @@ code, count, description
 6012,0, Abscess of prostate
 Total Count For This procedure: 58
 
-Key: 81.51
+Procedure: 81.51
 code, count, description
 99666,0,Infection and inflammatory reaction due to internal joint prosthesis
 99859,1,Other postoperative infection
@@ -701,7 +701,7 @@ code, count, description
 82002,2,Closed fracture of midcervical section of neck of femur
 Total Count For This procedure: 59
 
-Key: 81.54
+Procedure: 81.54
 code, count, description
 99859,1,Other postoperative infection
 99666,0,Infection and inflammatory reaction due to internal joint prosthesis
@@ -838,4 +838,4 @@ code, count, description
 9581,0, Fat embolism
 Total Count For This procedure: 56
 
-Total Count For All Procedures: 428
+Total Count For All Procedures: 431
