@@ -4,7 +4,7 @@ from datetime import datetime
 import ConfigParser
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext
-from pyspark.sql.functions import col,udf, unix_timestamp
+from pyspark.sql.functions import col,udf,unix_timestamp,lit
 from pyspark.sql.types import *
 import Model
 
@@ -165,6 +165,24 @@ class Utils:
         return df
 
     #
+    # find persons that have had died after an inpatient event
+    # convert-dates - convert date string columns to date objects
+    # OMOP tables are global so do not need to be passed to the function
+    #
+    def findDeathAfterEvent(self,inpatient_events, days, date_format):
+        inpatient_events.registerTempTable('inpatient_events')
+        sqlString = "select * from death"
+        death_date_converted = self.sqlContext.sql(sqlString)
+        date_conversion =  udf (lambda x: datetime.strptime(x, date_format), DateType())
+        death_date_converted = death_date_converted.withColumn('DEATH_DATE', date_conversion(col('DEATH_DATE')))
+        death_date_converted.registerTempTable('death_date_converted')
+        sqlString = "select distinct inpatient_events.PERSON_ID, inpatient_events.VISIT_END_DATE, inpatient_events.PROVIDER_ID from inpatient_events join death_date_converted where inpatient_events.PERSON_ID=death_date_converted.PERSON_ID and death_date_converted.DEATH_DATE < date_add(inpatient_events.VISIT_END_DATE," + days + ")"
+        df = self.sqlContext.sql(sqlString)
+        # code death as 0
+        df = df.withColumn('SOURCE_VALUE', lit(0))
+        return df
+
+    #
     # find persons that have been readmitted to the hospital
     # OMOP tables are global so do not need to be passed to the function
     # dates must be date objects
@@ -178,7 +196,6 @@ class Utils:
 
     #
     # count the number of occurrences for a provider
-    # OMOP tables are global so do not need to be passed to the function
     #
     def countProviderOccurrence(self, eventDf, sqlContext):
         eventDf.registerTempTable('provider_events')
@@ -202,7 +219,7 @@ class Utils:
         f = open(os.path.join(directory,filename), "w")
         total_for_all = 0
         for key, value in codes.iteritems():
-            f.write("Key: " + key + "\n")
+            f.write("Procedure: " + key + "\n")
             f.write("code, count, description\n")
             total = 0
             for code in value:
@@ -246,7 +263,7 @@ class Utils:
         total_for_all = 0
         for key, value in codes.iteritems():
             icd_all = self.readmissionGrouping(sqlContext, readmissionDfs[key]).toPandas()
-            f.write("Key: " + key + "\n")
+            f.write("Procedure: " + key + "\n")
             f.write("code, count, description\n")
             total = 0
             for code in value:

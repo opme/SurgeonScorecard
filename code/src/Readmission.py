@@ -30,7 +30,7 @@ class Readmission:
 
 
        # find readmission patients based on criteria in the properties file
-       self.readmissionDfs,self.providerProcedureInfoDfs = self.findReadmissionPatients(data, config, self.diagnostic_codes, self.readmission_codes)
+       self.readmissionDfs,self.providerProcedureInfoDfs,self.deaths = self.findReadmissionPatients(data, config, self.diagnostic_codes, self.readmission_codes)
 
     #
     # read diagnostic codes from a file into a dictionary
@@ -78,6 +78,7 @@ class Readmission:
         # find readmission patients for each procedure
         readmissionDfs = {}  # dict of dataframe of readmission patients for each procedure
         providerProcedureInfoDfs = {}  # dict of provider event counts for each procedure
+        deaths = {} # dict of patients who died for each procedure
         for key, value in diagnostic_codes.iteritems():
             # make sure we have readmission codes for this procedure
             if key not in readmission_codes:
@@ -123,23 +124,35 @@ class Readmission:
                 True, 
                 self.date_input_format).cache()
             inpatient_events = inpatient_co.unionAll(inpatient_po).cache()
-            # find complications
+            # find complications.  Only occurs in the condition_occurrence table
             complications = self.utils.findPersonsWithInpatientStay(condition_occurrence_r, 
                 'condition_occurrence', 
                 'VISIT_START_DATE', 
                 True, 
                 self.date_input_format).cache()
             # now find readmissions
-            readmissionDfs[key] = self.utils.findReadmissionPersons(inpatient_events, 
-                complications, 
+            readmissionDfs[key] = self.utils.findReadmissionPersons(inpatient_events,
+                complications,
                 self.readmission_days).cache()
+            deaths[key] = self.utils.findDeathAfterEvent(inpatient_events,
+                self.readmission_days,
+                self.date_input_format).cache()
 
             # create a dataframe to summarize the provider total procedure count and complication rate
-            providerEventCount = self.utils.countProviderOccurrence(inpatient_events, self.sqlContext).withColumnRenamed("COUNT", "TOTAL_COUNT").cache()
-            providerComplicationCount = self.utils.countProviderOccurrence(readmissionDfs[key], self.sqlContext).withColumnRenamed("COUNT", "COMPLICATION_COUNT").cache()
+            providerEventCount = self.utils.countProviderOccurrence(inpatient_events, 
+                self.sqlContext).withColumnRenamed("COUNT", "TOTAL_COUNT").cache()
+            providerComplicationCount = self.utils.countProviderOccurrence(readmissionDfs[key], 
+                self.sqlContext).withColumnRenamed("COUNT", "READMISSION_COUNT").cache()
+            providerDeathCount = self.utils.countProviderOccurrence(deaths[key],
+                self.sqlContext).withColumnRenamed("COUNT", "DEATH_COUNT").cache()
             providerProcedureInfo = providerEventCount.join(providerComplicationCount, 'PROVIDER_ID', how='left')
             providerProcedureInfo = providerProcedureInfo.fillna(0)
-            providerProcedureInfo = providerProcedureInfo.withColumn('PERCENTAGE', providerProcedureInfo.COMPLICATION_COUNT/providerProcedureInfo.TOTAL_COUNT)
+            providerProcedureInfo = providerProcedureInfo.join(providerDeathCount, 'PROVIDER_ID', how='left')
+            providerProcedureInfo = providerProcedureInfo.fillna(0)
+            providerProcedureInfo = providerProcedureInfo.withColumn('COMPLICATION_COUNT',
+                providerProcedureInfo.READMISSION_COUNT + providerProcedureInfo.DEATH_COUNT)
+            providerProcedureInfo = providerProcedureInfo.withColumn('PERCENTAGE', 
+                providerProcedureInfo.COMPLICATION_COUNT/providerProcedureInfo.TOTAL_COUNT)
             providerProcedureInfoDfs[key] = providerProcedureInfo
-        return readmissionDfs,providerProcedureInfoDfs
+        return readmissionDfs,providerProcedureInfoDfs,deaths
 
