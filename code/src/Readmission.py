@@ -140,7 +140,7 @@ class Readmission:
 
             # create a dataframe to summarize the provider total procedure count and complication rate
             providerEventCount = self.utils.countProviderOccurrence(inpatient_events, 
-                self.sqlContext).withColumnRenamed("COUNT", "PROCEDURE_COUNT").cache()
+                self.sqlContext).withColumnRenamed("COUNT", "TOTAL_COUNT").cache()
             providerComplicationCount = self.utils.countProviderOccurrence(readmissionDfs[key], 
                 self.sqlContext).withColumnRenamed("COUNT", "READMISSION_COUNT").cache()
             providerDeathCount = self.utils.countProviderOccurrence(deaths[key],
@@ -152,7 +152,7 @@ class Readmission:
             providerProcedureInfo = providerProcedureInfo.withColumn('COMPLICATION_COUNT',
                 providerProcedureInfo.READMISSION_COUNT + providerProcedureInfo.DEATH_COUNT)
             providerProcedureInfo = providerProcedureInfo.withColumn('PERCENTAGE', 
-                providerProcedureInfo.COMPLICATION_COUNT/providerProcedureInfo.PROCEDURE_COUNT)
+                providerProcedureInfo.COMPLICATION_COUNT/providerProcedureInfo.TOTAL_COUNT)
             providerProcedureInfoDfs[key] = providerProcedureInfo
         return readmissionDfs,providerProcedureInfoDfs,deaths
 

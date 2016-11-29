@@ -1,98 +1,98 @@
 Procedure: 81.08
 code, count, description
-72402,12199,Spinal stenosis, lumbar region, without neurogenic claudication
-7384,4186, Acquired spondylolisthesis
-72252,9632,Degeneration of lumbar or lumbosacral intervertebral disc
-7213,8655, Lumbosacral spondylosis without myelopathy
-72210,6245,Displacement of lumbar intervertebral disc without myelopathy
-75612,2033,Spondylolisthesis
-Total Count For This procedure: 42950
+72402,4890,Spinal stenosis, lumbar region, without neurogenic claudication
+7384,824, Acquired spondylolisthesis
+72252,1429,Degeneration of lumbar or lumbosacral intervertebral disc
+7213,1041, Lumbosacral spondylosis without myelopathy
+72210,2046,Displacement of lumbar intervertebral disc without myelopathy
+75612,392,Spondylolisthesis
+Total Count For This procedure: 10622
 
 Procedure: 81.02
 code, count, description
-7210,5004, Cervical spondylosis without myelopathy
-7220,1624, Displacement of cervical intervertebral disc without myelopathy
-7230,2389, Spinal stenosis in cervical region
-7224,2739, Degeneration of cervical intervertebral disc
-7234,891, Brachial neuritis or radiculitis NOS
-Total Count For This procedure: 12647
+7210,659, Cervical spondylosis without myelopathy
+7220,678, Displacement of cervical intervertebral disc without myelopathy
+7230,840, Spinal stenosis in cervical region
+7224,305, Degeneration of cervical intervertebral disc
+7234,152, Brachial neuritis or radiculitis NOS
+Total Count For This procedure: 2634
 
 Procedure: 51.23
 code, count, description
-57400,5420,Calculus of gallbladder with acute cholecystitis, without mention of obstruction
-57410,6462,Calculus of gallbladder with other cholecystitis, without mention of obstruction
-5770,13959, Acute pancreatitis
-5750,2101, Acute cholecystitis
-57420,7811,Calculus of gallbladder without mention of cholecystitis, without mention of obstruction
-57511,1179,Chronic cholecystitis
-57460,409,Calculus of gallbladder and bile duct with acute cholecystitis, without mention of obstruction
-57470,494,Calculus of gallbladder and bile duct with other cholecystitis, without mention of obstruction
-57512,470,Acute and chronic cholecystitis
-57401,374,Calculus of gallbladder with acute cholecystitis, with obstruction
-57480,265,Calculus of gallbladder and bile duct with acute and chronic cholecystitis, without mention of obstruction
-57430,283,Calculus of bile duct with acute cholecystitis, without mention of obstruction
-57461,250,Calculus of gallbladder and bile duct with acute cholecystitis, with obstruction
-57471,271,Calculus of gallbladder and bile duct with other cholecystitis, with obstruction
-57481,195,Calculus of gallbladder and bile duct with acute and chronic cholecystitis, with obstruction
-57510,642,Cholecystitis, unspecified
-57490,341,Calculus of gallbladder and bile duct without cholecystitis, without mention of obstruction
-57440,280,Calculus of bile duct with other cholecystitis, without mention of obstruction
-57431,195,Calculus of bile duct with acute cholecystitis, with obstruction
-57411,256,Calculus of gallbladder with other cholecystitis, with obstruction
-57450,1251,Calculus of bile duct without mention of cholecystitis, without mention of obstruction
-57491,207,Calculus of gallbladder and bile duct without cholecystitis, with obstruction
-57441,189,Calculus of bile duct with other cholecystitis, with obstruction
-57451,993,Calculus of bile duct without mention of cholecystitis, with obstruction
-57421,148,Calculus of gallbladder without mention of cholecystitis, with obstruction
-5753,426, Hydrops of gallbladder
-Total Count For This procedure: 44871
+57400,1176,Calculus of gallbladder with acute cholecystitis, without mention of obstruction
+57410,1042,Calculus of gallbladder with other cholecystitis, without mention of obstruction
+5770,4895, Acute pancreatitis
+5750,1165, Acute cholecystitis
+57420,1230,Calculus of gallbladder without mention of cholecystitis, without mention of obstruction
+57511,178,Chronic cholecystitis
+57460,56,Calculus of gallbladder and bile duct with acute cholecystitis, without mention of obstruction
+57470,112,Calculus of gallbladder and bile duct with other cholecystitis, without mention of obstruction
+57512,64,Acute and chronic cholecystitis
+57401,42,Calculus of gallbladder with acute cholecystitis, with obstruction
+57480,51,Calculus of gallbladder and bile duct with acute and chronic cholecystitis, without mention of obstruction
+57430,40,Calculus of bile duct with acute cholecystitis, without mention of obstruction
+57461,21,Calculus of gallbladder and bile duct with acute cholecystitis, with obstruction
+57471,38,Calculus of gallbladder and bile duct with other cholecystitis, with obstruction
+57481,21,Calculus of gallbladder and bile duct with acute and chronic cholecystitis, with obstruction
+57510,553,Cholecystitis, unspecified
+57490,56,Calculus of gallbladder and bile duct without cholecystitis, without mention of obstruction
+57440,31,Calculus of bile duct with other cholecystitis, without mention of obstruction
+57431,23,Calculus of bile duct with acute cholecystitis, with obstruction
+57411,24,Calculus of gallbladder with other cholecystitis, with obstruction
+57450,255,Calculus of bile duct without mention of cholecystitis, without mention of obstruction
+57491,25,Calculus of gallbladder and bile duct without cholecystitis, with obstruction
+57441,30,Calculus of bile duct with other cholecystitis, with obstruction
+57451,111,Calculus of bile duct without mention of cholecystitis, with obstruction
+57421,21,Calculus of gallbladder without mention of cholecystitis, with obstruction
+5753,3, Hydrops of gallbladder
+Total Count For This procedure: 11263
 
 Procedure: 81.07
 code, count, description
-72402,12199,Spinal stenosis, lumbar region, without neurogenic claudication
-7384,4186, Acquired spondylolisthesis
-72252,9632,Degeneration of lumbar or lumbosacral intervertebral disc
-7213,8655, Lumbosacral spondylosis without myelopathy
-72210,6245,Displacement of lumbar intervertebral disc without myelopathy
-72403,138,Spinal stenosis, lumbar region, with neurogenic claudication
-75612,2033,Spondylolisthesis
-73730,5622,Scoliosis [and kyphoscoliosis], idiopathic
-72283,894,Postlaminectomy syndrome, lumbar region
-Total Count For This procedure: 49604
+72402,4890,Spinal stenosis, lumbar region, without neurogenic claudication
+7384,824, Acquired spondylolisthesis
+72252,1429,Degeneration of lumbar or lumbosacral intervertebral disc
+7213,1041, Lumbosacral spondylosis without myelopathy
+72210,2046,Displacement of lumbar intervertebral disc without myelopathy
+72403,70,Spinal stenosis, lumbar region, with neurogenic claudication
+75612,392,Spondylolisthesis
+73730,212,Scoliosis [and kyphoscoliosis], idiopathic
+72283,218,Postlaminectomy syndrome, lumbar region
+Total Count For This procedure: 11122
 
 Procedure: 60.29
 code, count, description
-60001,11707,Hypertrophy (benign) of prostate with urinary obstruction and other lower urinary tract symptoms (LUTS)
-60000,45999,Hypertrophy (benign) of prostate without urinary obstruction and other lower urinary tract symptom (LUTS)
-60091,827,Hyperplasia of prostate, unspecified, with urinary obstruction and other lower urinary symptoms (LUTS)
-60021,125,Benign localized hyperplasia of prostate with urinary obstruction and other lower urinary tract symptoms (LUTS)
-60011,109,Nodular prostate with urinary obstruction
-60090,1135,Hyperplasia of prostate, unspecified, without urinary obstruction and other lower urinary symptoms (LUTS)
-60020,66,Benign localized hyperplasia of prostate without urinary obstruction and other lower urinary tract symptoms (LUTS)
-60010,95,Nodular prostate without urinary obstruction
-Total Count For This procedure: 60063
+60001,1940,Hypertrophy (benign) of prostate with urinary obstruction and other lower urinary tract symptoms (LUTS)
+60000,602,Hypertrophy (benign) of prostate without urinary obstruction and other lower urinary tract symptom (LUTS)
+60091,128,Hyperplasia of prostate, unspecified, with urinary obstruction and other lower urinary symptoms (LUTS)
+60021,24,Benign localized hyperplasia of prostate with urinary obstruction and other lower urinary tract symptoms (LUTS)
+60011,7,Nodular prostate with urinary obstruction
+60090,32,Hyperplasia of prostate, unspecified, without urinary obstruction and other lower urinary symptoms (LUTS)
+60020,1,Benign localized hyperplasia of prostate without urinary obstruction and other lower urinary tract symptoms (LUTS)
+60010,12,Nodular prostate without urinary obstruction
+Total Count For This procedure: 2746
 
 Procedure: 60.5
 code, count, description
-185,0,  Malignant neoplasm of prostate
-Total Count For This procedure: 0
+185,2585,  Malignant neoplasm of prostate
+Total Count For This procedure: 2585
 
 Procedure: 81.51
 code, count, description
-71535,11906,Osteoarthrosis, localized, not specified whether primary or secondary, pelvic region and thigh
-71595,4374,Osteoarthrosis, unspecified whether generalized or localized, pelvic region and thigh
-71515,1281,Osteoarthrosis, localized, primary, pelvic region and thigh
-Total Count For This procedure: 17561
+71535,7137,Osteoarthrosis, localized, not specified whether primary or secondary, pelvic region and thigh
+71595,2426,Osteoarthrosis, unspecified whether generalized or localized, pelvic region and thigh
+71515,1340,Osteoarthrosis, localized, primary, pelvic region and thigh
+Total Count For This procedure: 10903
 
 Procedure: 81.54
 code, count, description
-71536,28755,Osteoarthrosis, localized, not specified whether primary or secondary, lower leg
-71596,10995,Osteoarthrosis, unspecified whether generalized or localized, lower leg
-71516,3407,Osteoarthrosis, localized, primary, lower leg
-71696,1546,Arthropathy, unspecified, lower leg
-7140,25417, Rheumatoid arthritis
-71589,3891,Osteoarthrosis involving, or with mention of more than one site, but not specified as generalized, multiple sites
-71526,68,Osteoarthrosis, localized, secondary, lower leg
-Total Count For This procedure: 74079
+71536,18578,Osteoarthrosis, localized, not specified whether primary or secondary, lower leg
+71596,6543,Osteoarthrosis, unspecified whether generalized or localized, lower leg
+71516,3003,Osteoarthrosis, localized, primary, lower leg
+71696,365,Arthropathy, unspecified, lower leg
+7140,382, Rheumatoid arthritis
+71589,94,Osteoarthrosis involving, or with mention of more than one site, but not specified as generalized, multiple sites
+71526,48,Osteoarthrosis, localized, secondary, lower leg
+Total Count For This procedure: 29013
 
-Total Count For All Procedures: 301775
+Total Count For All Procedures: 80888

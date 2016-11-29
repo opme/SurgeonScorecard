@@ -73,8 +73,12 @@ class Utils:
             if filename.lower().endswith('.csv.lz4'): key=self.strip_end(filename, ".csv.lz4") # lz4
             if filename.lower().endswith('.csv.snappy'): key=self.strip_end(filename, ".csv.snappy") # snappy
             if key != None:
-                data[key] = self.loadCsv(sqlContext, os.path.join(directory,filename),model.model_schema[key])
-                data[key].registerTempTable(key)  
+                model_check = model.model_schema.get(key)
+                if model_check:
+                    data[key] = self.loadCsv(sqlContext, os.path.join(directory,filename),model.model_schema[key])
+                    data[key].registerTempTable(key)  
+                else:
+                    print "No model exists for: " + key + ".  This data file will be skipped."
         return data
 
     #
@@ -119,7 +123,7 @@ class Utils:
     def icdGrouping(self, sqlContext):
         icd_co = sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO from condition_occurrence group by CONDITION_SOURCE_VALUE")
         icd_po = sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO from procedure_occurrence group by PROCEDURE_SOURCE_VALUE")
-        icd_all = icd_co.join(icd_po,'SOURCE_VALUE', how='left').fillna(0)
+        icd_all = icd_co.join(icd_po,'SOURCE_VALUE', how='outer').fillna(0)
         icd_all = icd_all.withColumn('COUNT', icd_all.COUNT_CO + icd_all.COUNT_PO)
         return icd_all
 
@@ -129,9 +133,9 @@ class Utils:
     #  Tables condition_occurrence and procedure_occurrence are global
     #
     def icdGroupingPrimary(self, sqlContext):
-        icd_co = sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO from condition_occurrence where CONDITION_TYPE_CONCEPT_ID='38000200' group by CONDITION_SOURCE_VALUE")
-        icd_po = sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO from procedure_occurrence where PROCEDURE_TYPE_CONCEPT_ID='38000251' group by PROCEDURE_SOURCE_VALUE")
-        icd_all = icd_co.join(icd_po,'SOURCE_VALUE', how='left').fillna(0)
+        icd_co = sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO from condition_occurrence where CONDITION_TYPE_CONCEPT_ID='38000199' group by CONDITION_SOURCE_VALUE")
+        icd_po = sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO from procedure_occurrence where PROCEDURE_TYPE_CONCEPT_ID='38000250' group by PROCEDURE_SOURCE_VALUE")
+        icd_all = icd_co.join(icd_po,'SOURCE_VALUE', how='outer').fillna(0)
         icd_all = icd_all.withColumn('COUNT', icd_all.COUNT_CO + icd_all.COUNT_PO)
         return icd_all
 
