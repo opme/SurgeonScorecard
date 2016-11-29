@@ -1,30 +1,30 @@
 Procedure: 81.08
 code, count, description
-72402,4,Spinal stenosis, lumbar region, without neurogenic claudication
+72402,0,Spinal stenosis, lumbar region, without neurogenic claudication
 7384,0, Acquired spondylolisthesis
-72252,2,Degeneration of lumbar or lumbosacral intervertebral disc
-7213,1, Lumbosacral spondylosis without myelopathy
+72252,0,Degeneration of lumbar or lumbosacral intervertebral disc
+7213,0, Lumbosacral spondylosis without myelopathy
 72210,0,Displacement of lumbar intervertebral disc without myelopathy
 75612,0,Spondylolisthesis
-Total Count For This procedure: 7
+Total Count For This procedure: 0
 
 Procedure: 81.02
 code, count, description
-7210,2, Cervical spondylosis without myelopathy
+7210,0, Cervical spondylosis without myelopathy
 7220,0, Displacement of cervical intervertebral disc without myelopathy
 7230,0, Spinal stenosis in cervical region
-7224,1, Degeneration of cervical intervertebral disc
+7224,0, Degeneration of cervical intervertebral disc
 7234,0, Brachial neuritis or radiculitis NOS
-Total Count For This procedure: 3
+Total Count For This procedure: 0
 
 Procedure: 51.23
 code, count, description
-57400,8,Calculus of gallbladder with acute cholecystitis, without mention of obstruction
-57410,1,Calculus of gallbladder with other cholecystitis, without mention of obstruction
-5770,2, Acute pancreatitis
+57400,0,Calculus of gallbladder with acute cholecystitis, without mention of obstruction
+57410,0,Calculus of gallbladder with other cholecystitis, without mention of obstruction
+5770,0, Acute pancreatitis
 5750,0, Acute cholecystitis
 57420,0,Calculus of gallbladder without mention of cholecystitis, without mention of obstruction
-57511,1,Chronic cholecystitis
+57511,0,Chronic cholecystitis
 57460,0,Calculus of gallbladder and bile duct with acute cholecystitis, without mention of obstruction
 57470,0,Calculus of gallbladder and bile duct with other cholecystitis, without mention of obstruction
 57512,0,Acute and chronic cholecystitis
@@ -42,23 +42,23 @@ code, count, description
 57450,0,Calculus of bile duct without mention of cholecystitis, without mention of obstruction
 57491,0,Calculus of gallbladder and bile duct without cholecystitis, with obstruction
 57441,0,Calculus of bile duct with other cholecystitis, with obstruction
-57451,1,Calculus of bile duct without mention of cholecystitis, with obstruction
+57451,0,Calculus of bile duct without mention of cholecystitis, with obstruction
 57421,0,Calculus of gallbladder without mention of cholecystitis, with obstruction
 5753,0, Hydrops of gallbladder
-Total Count For This procedure: 13
+Total Count For This procedure: 0
 
 Procedure: 81.07
 code, count, description
-72402,4,Spinal stenosis, lumbar region, without neurogenic claudication
+72402,0,Spinal stenosis, lumbar region, without neurogenic claudication
 7384,0, Acquired spondylolisthesis
-72252,2,Degeneration of lumbar or lumbosacral intervertebral disc
-7213,1, Lumbosacral spondylosis without myelopathy
+72252,0,Degeneration of lumbar or lumbosacral intervertebral disc
+7213,0, Lumbosacral spondylosis without myelopathy
 72210,0,Displacement of lumbar intervertebral disc without myelopathy
 72403,0,Spinal stenosis, lumbar region, with neurogenic claudication
 75612,0,Spondylolisthesis
 73730,0,Scoliosis [and kyphoscoliosis], idiopathic
 72283,0,Postlaminectomy syndrome, lumbar region
-Total Count For This procedure: 7
+Total Count For This procedure: 0
 
 Procedure: 60.29
 code, count, description
@@ -74,25 +74,25 @@ Total Count For This procedure: 0
 
 Procedure: 60.5
 code, count, description
-185,2,  Malignant neoplasm of prostate
-Total Count For This procedure: 2
+185,0,  Malignant neoplasm of prostate
+Total Count For This procedure: 0
 
 Procedure: 81.51
 code, count, description
-71535,5,Osteoarthrosis, localized, not specified whether primary or secondary, pelvic region and thigh
-71595,1,Osteoarthrosis, unspecified whether generalized or localized, pelvic region and thigh
-71515,1,Osteoarthrosis, localized, primary, pelvic region and thigh
-Total Count For This procedure: 7
+71535,0,Osteoarthrosis, localized, not specified whether primary or secondary, pelvic region and thigh
+71595,0,Osteoarthrosis, unspecified whether generalized or localized, pelvic region and thigh
+71515,0,Osteoarthrosis, localized, primary, pelvic region and thigh
+Total Count For This procedure: 0
 
 Procedure: 81.54
 code, count, description
-71536,6,Osteoarthrosis, localized, not specified whether primary or secondary, lower leg
-71596,3,Osteoarthrosis, unspecified whether generalized or localized, lower leg
-71516,7,Osteoarthrosis, localized, primary, lower leg
+71536,0,Osteoarthrosis, localized, not specified whether primary or secondary, lower leg
+71596,0,Osteoarthrosis, unspecified whether generalized or localized, lower leg
+71516,0,Osteoarthrosis, localized, primary, lower leg
 71696,0,Arthropathy, unspecified, lower leg
 7140,0, Rheumatoid arthritis
 71589,0,Osteoarthrosis involving, or with mention of more than one site, but not specified as generalized, multiple sites
 71526,0,Osteoarthrosis, localized, secondary, lower leg
-Total Count For This procedure: 16
+Total Count For This procedure: 0
 
-Total Count For All Procedures: 55
+Total Count For All Procedures: 0
