@@ -95,4 +95,4 @@ There are no unit tests
 
 ## Reference Paper
 
-The reference paper is included in the git repository [here](https://github.com/opme/SurgeonScorecard/SurgeonScorecard.pdf)
+The reference paper is included in the git repository [here](https://github.com/opme/SurgeonScorecard/Surgeon_Scorecard.pdf)
