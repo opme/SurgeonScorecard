@@ -23,6 +23,8 @@ Readmission.py - The Readmission library takes a Cohort and finds readmissions a
 
 ## Example
 
+Edit the file run.sh to point to the correct location of the spark binary
+
 ```
 $ cd code
 $ ./run.sh
@@ -93,4 +95,4 @@ There are no unit tests
 
 ## Reference Paper
 
-The reference paper is included in the git repository here.
+The reference paper is included in the git repository [here](https://github.com/opme/SurgeonScorecard/SurgeonScorecard.pdf)
