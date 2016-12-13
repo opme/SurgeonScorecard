@@ -12,7 +12,7 @@ class Cohort:
     #  filter is not applied
     #
     def __init__(self, data, config, sqlContext):
-       utils = Utils.Utils(sqlContext)
+       self.utils = Utils.Utils(sqlContext)
        self.sqlContext = sqlContext
        # set instance variables based on properties
        self.env = config.get('branch','env')
@@ -29,6 +29,8 @@ class Cohort:
        self.csv_output_codec = config.get(self.env+'.cohort','csv_output_codec')
        self.filter_care_sites = config.get(self.env+'.cohort','filter_care_sites').split(",")
        self.inpatient_only = config.get(self.env+'.cohort','inpatient_only')
+       self.inpatient_condition_primary_diagnosis = config.get(self.env+'.cohort','inpatient_condition_primary_diagnosis')
+       self.inpatient_procedure_primary_diagnosis = config.get(self.env+'.cohort','inpatient_procedure_primary_diagnosis')
        if not self.filter_care_sites[0]:
             self.filter_care_sites = []
        self.include_care_sites = config.get(self.env+'.cohort','include_care_sites').split(",")
@@ -52,7 +54,7 @@ class Cohort:
            self.filterByEventDate(data, self.events_start_date, self.events_end_date)
        # write the filtered data back out to files
        if self.write_csv_output == "True":
-          utils.writeRawData(data,self.csv_output_codec,self.csv_output_dir)
+          self.utils.writeRawData(data,self.csv_output_codec,self.csv_output_dir)
        # filter by users who have not had an inpatient stay
        if self.inpatient_only == "True":
           self.filterInpatientOnly(data)
@@ -121,10 +123,33 @@ class Cohort:
     def includeCareSites(self, data):
         data['person'] = data['person'].where(data['person'].CARE_SITE_ID.isin(self.include_care_sites))
 
-    # filter out users that have not had an inpatient stay
+    # filter out users that have not had a visit to the hospital
     # first join person with visit_occurrence then drop the visit_occurrence column and get rid of duplicates
-    def filterInpatientOnly(self, data):
+    def filterNoHospitalVisit(self, data):
         df = self.sqlContext.sql("select person.*, visit_occurrence.VISIT_OCCURRENCE_ID from person inner join visit_occurrence on person.PERSON_ID=visit_occurrence.PERSON_ID")
         df = df.drop('VISIT_OCCURRENCE_ID')
         df = df.dropDuplicates(['PERSON_ID'])
         data['person'] = df
+
+    # filter out users that have not had an inpatient stay at the hospital
+    # first join person with visit_occurrence then drop the visit_occurrence column and get rid of duplicates
+    def filterInpatientOnly(self, data):
+        # get all patients that have an inpatient condition_occurrence
+        icd_co_temp = self.utils.filterDataframeByCodes(data['condition_occurrence'],
+            self.inpatient_condition_primary_diagnosis,
+           'CONDITION_TYPE_CONCEPT_ID')
+        icd_co_temp.registerTempTable('condition_occurrence_primary')
+        dfc = self.sqlContext.sql("select person.*, condition_occurrence_primary.CONDITION_TYPE_CONCEPT_ID from person inner join condition_occurrence_primary on person.PERSON_ID=condition_occurrence_primary.PERSON_ID")
+        dfc = dfc.drop('CONDITION_TYPE_CONCEPT_ID')
+        # get all patients that have an inpatient procedure_occurrence
+        icd_po_temp = self.utils.filterDataframeByCodes(data['procedure_occurrence'],
+            self.inpatient_procedure_primary_diagnosis,
+           'PROCEDURE_TYPE_CONCEPT_ID')
+        icd_po_temp.registerTempTable('procedure_occurrence_primary')
+        dfp = self.sqlContext.sql("select person.*, procedure_occurrence_primary.PROCEDURE_TYPE_CONCEPT_ID from person inner join procedure_occurrence_primary on person.PERSON_ID=procedure_occurrence_primary.PERSON_ID")
+        dfp = dfp.drop('PROCEDURE_TYPE_CONCEPT_ID')
+        # join the two patient dataframes
+        df = dfc.unionAll(dfp)
+        df = df.dropDuplicates(['PERSON_ID'])
+        data['person'] = df
+
