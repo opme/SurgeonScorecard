@@ -130,11 +130,19 @@ class Utils:
     #
     #  For a particular icd code, count the number of principal admission diagnosis codes for patients 
     #  undergoing each of the procedures.
-    #  Tables condition_occurrence and procedure_occurrence are global
     #
-    def icdGroupingPrimary(self, sqlContext):
-        icd_co = sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO from condition_occurrence where CONDITION_TYPE_CONCEPT_ID='38000199' group by CONDITION_SOURCE_VALUE")
-        icd_po = sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO from procedure_occurrence where PROCEDURE_TYPE_CONCEPT_ID='38000250' group by PROCEDURE_SOURCE_VALUE")
+    def icdGroupingPrimary(self, data, conditionCodes, procedureCodes):
+        icd_co = self.filterDataframeByCodes(data['condition_occurrence'],
+                conditionCodes,
+                'CONDITION_TYPE_CONCEPT_ID')
+        icd_po = self.utils.filterDataframeByCodes(data['procedure_occurrence'],
+                procedureCodes,
+                'PROCEDURE_TYPE_CONCEPT_ID')
+
+        #icd_co = sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO 
+        #                            from condition_occurrence where CONDITION_TYPE_CONCEPT_ID='38000199' group by CONDITION_SOURCE_VALUE")
+        #icd_po = sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO 
+        #                            from procedure_occurrence where PROCEDURE_TYPE_CONCEPT_ID='38000250' group by PROCEDURE_SOURCE_VALUE")
         icd_all = icd_co.join(icd_po,'SOURCE_VALUE', how='outer').fillna(0)
         icd_all = icd_all.withColumn('COUNT', icd_all.COUNT_CO + icd_all.COUNT_PO)
         return icd_all
@@ -187,105 +195,9 @@ class Utils:
         return df
 
     #
-    # find persons that have been readmitted to the hospital
-    # OMOP tables are global so do not need to be passed to the function
-    # dates must be date objects
-    #
-    def findReadmissionPersons(self, inpatient_events, complications, days):
-        inpatient_events.registerTempTable('inpatient_events')
-        complications.registerTempTable('complications')
-        sqlString = "select distinct inpatient_events.PERSON_ID, inpatient_events.VISIT_END_DATE, inpatient_events.PROVIDER_ID, complications.SOURCE_VALUE from inpatient_events join complications where inpatient_events.PERSON_ID=complications.PERSON_ID and inpatient_events.VISIT_END_DATE < complications.VISIT_START_DATE and complications.VISIT_START_DATE < date_add(inpatient_events.VISIT_END_DATE," + days + ")"
-        df =  self.sqlContext.sql(sqlString)
-        return df
-
-    #
     # count the number of occurrences for a provider
     #
     def countProviderOccurrence(self, eventDf, sqlContext):
         eventDf.registerTempTable('provider_events')
         provider_event_counts = sqlContext.sql("select provider_events.PROVIDER_ID, count(*) count from provider_events group by PROVIDER_ID order by count desc") 
         return provider_event_counts
-
-    #
-    # find counts of icd codes
-    # If primary_only flag is set, only count those icd codes designated as primary inpatient codes
-    #
-    def writeCodesAndCount(self, sqlContext, codes, directory, filename, primary_only):
-        if not os.path.exists(directory):
-            os.makedirs(directory)
-        if primary_only:
-            # look only for icd codes that are primary inpatient
-            icd_all = self.icdGroupingPrimary(sqlContext).toPandas()
-        else:
-            # look at all icd codes
-            icd_all = self.icdGrouping(sqlContext).toPandas()
-        icd_def = self.readFileIcd9('icd/icd9/CMS32_DESC_LONG_DX.txt')  # read icd9 definitions into dict
-        f = open(os.path.join(directory,filename), "w")
-        total_for_all = 0
-        for key, value in codes.iteritems():
-            f.write("Procedure: " + key + "\n")
-            f.write("code, count, description\n")
-            total = 0
-            for code in value:
-                if icd_all[icd_all.SOURCE_VALUE==code].empty:
-                    icd_count=0
-                else:
-                    icd_count = icd_all[icd_all.SOURCE_VALUE==code].COUNT.item()
-                total += icd_count
-                if code not in icd_def:
-                    icd_description = ""
-                else: 
-                    icd_description = icd_def[code]
-                outstring = code + "," + str(icd_count) + "," + icd_description + "\n"
-                f.write(outstring)
-            totalString = "Total Count For This procedure: " + str(total) + "\n\n"
-            f.write(totalString)
-            total_for_all += total
-        totalForAllString = "Total Count For All Procedures: " + str(total_for_all) + "\n"
-        f.write(totalForAllString)
-        f.close()
-
-
-    #
-    #  For a particular icd code, count the number of occurrences
-    #  This is done by summing the count values in condition_occurrence and procedure_occurrence
-    #  Tables condition_occurrence and procedure_occurrence are global
-    #
-    def readmissionGrouping(self, sqlContext, readmission):
-        readmission.registerTempTable('readmissioN') 
-        icd_count = sqlContext.sql("select SOURCE_VALUE, count(*) COUNT from readmission group by SOURCE_VALUE")
-        return icd_count
-
-    #
-    # find code counts for readmission event 
-    #
-    def writeReadmissionCodesAndCount(self, sqlContext, codes, readmissionDfs, directory, filename):
-        if not os.path.exists(directory):
-            os.makedirs(directory)
-        icd_def = self.readFileIcd9('icd/icd9/CMS32_DESC_LONG_DX.txt')  # read icd9 definitions into dict
-        f = open(os.path.join(directory,filename), "w")
-        total_for_all = 0
-        for key, value in codes.iteritems():
-            icd_all = self.readmissionGrouping(sqlContext, readmissionDfs[key]).toPandas()
-            f.write("Procedure: " + key + "\n")
-            f.write("code, count, description\n")
-            total = 0
-            for code in value:
-                if icd_all[icd_all.SOURCE_VALUE==code].empty:
-                    icd_count=0
-                else:
-                    icd_count = icd_all[icd_all.SOURCE_VALUE==code].COUNT.item()
-                total += icd_count
-                if code not in icd_def:
-                    icd_description = ""
-                else:
-                    icd_description = icd_def[code]
-                outstring = code + "," + str(icd_count) + "," + icd_description + "\n"
-                f.write(outstring)
-            totalString = "Total Count For This procedure: " + str(total) + "\n\n"
-            f.write(totalString)
-            total_for_all += total
-        totalForAllString = "Total Count For All Procedures: " + str(total_for_all) + "\n"
-        f.write(totalForAllString)
-        f.close()
-

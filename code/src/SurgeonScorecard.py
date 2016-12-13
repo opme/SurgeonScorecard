@@ -66,15 +66,15 @@ def main():
 
     # calculate statistics related to codes
     # write a file with counts of all diagnostic icd codes
-    util.writeCodesAndCount(sqlContext, readmit.diagnostic_codes, resultdir, 'procedure_count_all.txt', False)
+    readmit.writeCodesAndCount(sqlContext, readmit.diagnostic_codes, resultdir, 'procedure_count_all.txt', False)
     # write a file with counts of all diagnostic icd codes where the code is primary
-    util.writeCodesAndCount(sqlContext, readmit.diagnostic_codes, resultdir, 'procedure_count_primary.txt', True)
+    readmit.writeCodesAndCount(sqlContext, readmit.diagnostic_codes, resultdir, 'procedure_count_primary.txt', True)
     # write a file with counts of all readmission icd codes
-    util.writeCodesAndCount(sqlContext, readmit.readmission_codes, resultdir, 'readmission_count_all.txt', False)
+    readmit.writeCodesAndCount(sqlContext, readmit.readmission_codes, resultdir, 'readmission_count_all.txt', False)
     # write a file with counts of all readmission icd codes where the code is primary
-    util.writeCodesAndCount(sqlContext, readmit.readmission_codes, resultdir, 'readmission_count_primary.txt', True)
+    readmit.writeCodesAndCount(sqlContext, readmit.readmission_codes, resultdir, 'readmission_count_primary.txt', True)
     # write a file with counts of readmission events by code
-    util.writeReadmissionCodesAndCount(sqlContext, 
+    readmit.writeReadmissionCodesAndCount(sqlContext, 
         readmit.readmission_codes, 
         readmit.readmissionDfs, 
         resultdir, 
