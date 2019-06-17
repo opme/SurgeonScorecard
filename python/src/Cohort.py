@@ -1,5 +1,5 @@
 import os
-import ConfigParser
+import configparser
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext
 from pyspark.sql.types import *

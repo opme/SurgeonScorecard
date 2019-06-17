@@ -1,5 +1,5 @@
 import os
-import ConfigParser
+import configparser
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext
 from pyspark.sql.types import *
@@ -83,7 +83,7 @@ class Readmission:
         for key, value in diagnostic_codes.iteritems():
             # make sure we have readmission codes for this procedure
             if key not in readmission_codes:
-                print "No readmission codes for this procedure.  This procedure " + key + " will be skipped. "
+                print("No readmission codes for this procedure.  This procedure " + key + " will be skipped. ")
                 continue
             # find events with codes of interest
             condition_occurrence_f = self.utils.filterDataframeByCodes(data['condition_occurrence'], 

@@ -1,7 +1,7 @@
 import os
 import sys
 from datetime import datetime
-import ConfigParser
+import configparser
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext
 from pyspark.sql.functions import col,udf,unix_timestamp,lit
@@ -78,7 +78,7 @@ class Utils:
                     data[key] = self.loadCsv(sqlContext, os.path.join(directory,filename),model.model_schema[key])
                     data[key].registerTempTable(key)  
                 else:
-                    print "No model exists for: " + key + ".  This data file will be skipped."
+                    print("No model exists for: " + key + ".  This data file will be skipped.")
         return data
 
     #

@@ -53,14 +53,14 @@ def main():
     # create a cohort of users and their associated data
     # The cohort and event data is filtered based on properties
     cohort = Cohort.Cohort(data, config, sqlContext)
-    print "Number of patients in cohort: " + str(data['person'].count())
+    print("Number of patients in cohort: " + str(data['person'].count()))
 
     # Find readmission events for this cohort for procedures of interest
     readmit = Readmission.Readmission(data, config, sc, sqlContext)
 
     # write the results to csv files
     for key, value in readmit.providerProcedureInfoDfs.iteritems():
-        print "Writing provider data for: " + key
+        print("Writing provider data for: " + key)
         filename = key + ".csv"
         util.saveDataframeAsSingleFile(value, resultdir, filename)
 
