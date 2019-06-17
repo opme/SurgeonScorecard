@@ -59,7 +59,7 @@ def main():
     readmit = Readmission.Readmission(data, config, sc, sqlContext)
 
     # write the results to csv files
-    for key, value in readmit.providerProcedureInfoDfs.iteritems():
+    for key, value in readmit.providerProcedureInfoDfs.items():
         print("Writing provider data for: " + key)
         filename = key + ".csv"
         util.saveDataframeAsSingleFile(value, resultdir, filename)

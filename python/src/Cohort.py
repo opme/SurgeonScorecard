@@ -63,7 +63,7 @@ class Cohort:
            
     # reset data caches
     def resetDataCache(self, data):
-        for key, value in data.iteritems():
+        for key, value in data.items():
             data[key].registerTempTable(key)
             data[key].cache()
             

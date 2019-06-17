@@ -87,7 +87,7 @@ class Utils:
     def writeRawData(self, data, codec, directory):
         if not os.path.exists(directory):
             os.makedirs(directory)
-        for key, value in data.iteritems():
+        for key, value in data.items():
             self.saveDataframeAsFile(data[key], codec, os.path.join(directory,key))
 
     #

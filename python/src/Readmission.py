@@ -80,7 +80,7 @@ class Readmission:
         readmissionDfs = {}  # dict of dataframe of readmission patients for each procedure
         providerProcedureInfoDfs = {}  # dict of provider event counts for each procedure
         deaths = {} # dict of patients who died for each procedure
-        for key, value in diagnostic_codes.iteritems():
+        for key, value in diagnostic_codes.items():
             # make sure we have readmission codes for this procedure
             if key not in readmission_codes:
                 print("No readmission codes for this procedure.  This procedure " + key + " will be skipped. ")
@@ -222,7 +222,7 @@ class Readmission:
         icd_def = self.utils.readFileIcd9('icd/icd9/CMS32_DESC_LONG_DX.txt')  # read icd9 definitions into dict
         f = open(os.path.join(directory,filename), "w")
         total_for_all = 0
-        for key, value in codes.iteritems():
+        for key, value in codes.items():
             f.write("Procedure: " + key + "\n")
             f.write("code, count, description\n")
             total = 0
@@ -264,7 +264,7 @@ class Readmission:
         icd_def = self.utils.readFileIcd9('icd/icd9/CMS32_DESC_LONG_DX.txt')  # read icd9 definitions into dict
         f = open(os.path.join(directory,filename), "w")
         total_for_all = 0
-        for key, value in codes.iteritems():
+        for key, value in codes.items():
             icd_all = self.readmissionGrouping(sqlContext, readmissionDfs[key]).toPandas()
             f.write("Procedure: " + key + "\n")
             f.write("code, count, description\n")
