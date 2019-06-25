@@ -19,8 +19,8 @@ object SurgeonScorecard {
 
     val config = ConfigFactory.load()
     val env = "scorecard"
-    val datadir = config.getString(env + ".data")
-    val resultdir = config.getString(env + ".readmission")
+    val datadir = config.getString(env + ".datadir")
+    val resultdir = config.getString(env + ".resultdir")
     val driver_memory = config.getString(env + ".driver_memory")
     val shuffle_partitions = config.getString(env + ".shuffle_partitions")
 	
