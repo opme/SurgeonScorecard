@@ -1,3 +1,3 @@
 #!/bin/sh
 . ./setenv.sh
-sbt compile
+sbt compile run
