@@ -1,0 +1,3 @@
+Create egg file with the following command:
+
+python setup.py bdist_egg
