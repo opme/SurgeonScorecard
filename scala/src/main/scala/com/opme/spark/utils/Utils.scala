@@ -2,7 +2,7 @@ package com.opme.spark.utils
 
 import scala.io.Source
 import org.apache.spark.sql._ 
-import java.io.File
+import java.io._
 import com.opme.spark.model.Model
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions.col
@@ -120,12 +120,19 @@ object Utils {
 	// expects a file with name=value where value is a set of values seperated by commas
     //
     def readFileToDict(filename: String) : scala.collection.immutable.Map[String,List[String]] = {
+       println("converting " + filename + " to map")
+       val stream: InputStream = getClass.getResourceAsStream(filename)
+	   val lines: Iterator[String] = scala.io.Source.fromInputStream( stream ).getLines
+       for (line <- lines) {
+         println(line)
+       }
+		 
        val pairs = 
        for {
-          line <- Source.fromFile(filename).getLines()
-		  val substrings = line.split("=").map(_.trim)
-		  name = substrings(0)
-		  value = substrings(1).split(",").map(_.trim).toList
+         line <- lines
+	     val substrings = line.split("=").map(_.trim)
+	     name = substrings(0)
+	     value = substrings(1).split(",").map(_.trim).toList
        } yield (name -> value)
        pairs.toMap
     }

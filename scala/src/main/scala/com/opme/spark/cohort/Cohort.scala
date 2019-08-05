@@ -158,6 +158,7 @@ class Cohort(spark: SparkSession, data: collection.mutable.Map[String, DataFrame
     // filter out users that have not had a visit to the hospital
     // first join person with visit_occurrence then drop the visit_occurrence column and get rid of duplicates
     def filterNoHospitalVisit(data: collection.mutable.Map[String, DataFrame]) : collection.mutable.Map[String, DataFrame] = {
+	    data("person").registerTempTable("person")
         var df = spark.sql("select person.*, visit_occurrence.VISIT_OCCURRENCE_ID from person inner join visit_occurrence on person.PERSON_ID=visit_occurrence.PERSON_ID")
         df = df.drop("VISIT_OCCURRENCE_ID")
         df = df.dropDuplicates("PERSON_ID")
@@ -173,6 +174,7 @@ class Cohort(spark: SparkSession, data: collection.mutable.Map[String, DataFrame
             inpatient_condition_primary_diagnosis,
            "CONDITION_TYPE_CONCEPT_ID")
         icd_co_temp.registerTempTable("condition_occurrence_primary")
+		data("person").registerTempTable("person")
         val dfc = spark.sql("select person.*, condition_occurrence_primary.CONDITION_TYPE_CONCEPT_ID from person inner join condition_occurrence_primary on person.PERSON_ID=condition_occurrence_primary.PERSON_ID")
         dfc.drop("CONDITION_TYPE_CONCEPT_ID")
         // get all patients that have an inpatient procedure_occurrence

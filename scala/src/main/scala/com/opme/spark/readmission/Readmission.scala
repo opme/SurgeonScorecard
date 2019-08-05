@@ -12,19 +12,19 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
     // Detect readmission given a set of data in OMOP format
     //
     val env = "scorecard"
-    val date_input_format = config.getString(env + ".data")
-    val readmission_days = config.getString(env + ".readmission")
-    val readmission_code_file = config.getString(env + ".readmission")
-    val diagnostic_code_file = config.getString(env + ".readmission")
-    val comorbidies_code_file = config.getString(env + ".readmission")
+    val date_input_format = config.getString(env + ".date_input_format")
+    val readmission_days = config.getString(env + ".readmission_days")
+    val readmission_code_file = config.getString(env + ".readmission_code_file")
+    val diagnostic_code_file = config.getString(env + ".diagnostic_code_file")
+    val comorbidies_code_file = config.getString(env + ".comorbidies_code_file")
     val readmission_codes = getReadmissionCodes(readmission_code_file)
     val diagnostic_codes = getDiagnosticCodes(diagnostic_code_file)
     val comorbitiy_codes = getComorbityCodes(comorbidies_code_file)
-    val icd_diagnosis = config.getString(env + ".readmission")
-    val icd_readmission = config.getString(env + ".readmission")
-    val inpatient_condition_primary_diagnosis = config.getString(env + ".readmission").split(',').toList
-    val inpatient_procedure_primary_diagnosis =  config.getString(env + ".readmission").split(',').toList
-//(filter_care_sites.split(',')).toList
+    val icd_diagnosis = config.getString(env + ".icd_diagnosis")
+    val icd_readmission = config.getString(env + ".icd_readmission")
+    val inpatient_condition_primary_diagnosis = config.getString(env + ".inpatient_condition_primary_diagnosis").split(',').toList
+    val inpatient_procedure_primary_diagnosis =  config.getString(env + ".inpatient_procedure_primary_diagnosis").split(',').toList
+
 
     // find readmission patients based on criteria in the properties file
     var (readmissionDfs,providerProcedureInfoDfs,deaths) = readmissionPatients(data, config, diagnostic_codes, readmission_codes)
