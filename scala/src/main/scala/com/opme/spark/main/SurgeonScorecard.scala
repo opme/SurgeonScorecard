@@ -30,6 +30,7 @@ object SurgeonScorecard {
     // Create a SparkContext using every core of the local machine, named SurgeonScorecard
     val spark = SparkSession
      .builder()
+	 .master("local")
      .appName("SurgeonScorecard")
      .getOrCreate()
 	 
