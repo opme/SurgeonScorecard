@@ -123,10 +123,6 @@ object Utils {
        println("converting " + filename + " to map")
        val stream: InputStream = getClass.getResourceAsStream(filename)
 	   val lines: Iterator[String] = scala.io.Source.fromInputStream( stream ).getLines
-       for (line <- lines) {
-         println(line)
-       }
-		 
        val pairs = 
        for {
          line <- lines
@@ -159,10 +155,10 @@ object Utils {
     //  This is done by summing the count values in condition_occurrence and procedure_occurrence
     //  Tables condition_occurrence and procedure_occurrence are global
     //
-    def icdGrouping(spark: SparkSession) : DataFrame = {
-        val icd_co = spark.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO from condition_occurrence group by CONDITION_SOURCE_VALUE")
-        val icd_po = spark.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO from procedure_occurrence group by PROCEDURE_SOURCE_VALUE")
-        var icd_all = icd_co.join(icd_po,col("icd_co.SOURCE_VALUE") === col("icd_po.SOURCE_VALUE"), "outer").na.fill(0)
+    def icdGrouping(spark: SparkSession) : DataFrame = { 
+        val icd_co = spark.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE_CO, count(*) COUNT_CO from condition_occurrence group by CONDITION_SOURCE_VALUE")
+        val icd_po = spark.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE_PO, count(*) COUNT_PO from procedure_occurrence group by PROCEDURE_SOURCE_VALUE")
+        var icd_all = icd_co.join(icd_po,col("SOURCE_VALUE_CO") === col("SOURCE_VALUE_PO"), "outer").na.fill(0)
         //icd_all = icd_all.withColumn("COUNT", icd_all.COUNT_CO + icd_all.COUNT_PO)
         icd_all
     }
