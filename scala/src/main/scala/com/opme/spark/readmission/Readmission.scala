@@ -187,12 +187,12 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
         var icd_all = spark.emptyDataFrame
 		if (primary_only == true) {
             // look only for icd codes that are primary inpatient
-            icd_all = Utils.icdGroupingPrimary(data, inpatient_condition_primary_diagnosis, inpatient_procedure_primary_diagnosis)
+            icd_all = Utils.icdGroupingPrimary(spark, data, inpatient_condition_primary_diagnosis, inpatient_procedure_primary_diagnosis)
         } else {
             // look at all icd codes
             icd_all = Utils.icdGrouping(spark)
 		}	
-        val icd_def = Utils.readFileIcd9("icd/icd9/CMS32_DESC_LONG_DX.txt")  // read icd9 definitions into dict
+        val icd_def = Utils.readFileIcd9("/CMS32_DESC_LONG_DX.txt")  // read icd9 definitions into dict
         /*f = open(os.path.join(directory,filename), "w")
         total_for_all = 0
         for key, value in codes.iteritems():
@@ -236,7 +236,7 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
     def writeReadmissionCodesAndCount(codes: scala.collection.immutable.Map[String,List[String]], readmissionDfs: scala.collection.mutable.Map[String,DataFrame], directory: String, filename: String) = {
         //if not os.path.exists(directory):
         //    os.makedirs(directory)
-        val icd_def = Utils.readFileIcd9("icd/icd9/CMS32_DESC_LONG_DX.txt")  // read icd9 definitions into dict
+        val icd_def = Utils.readFileIcd9("/CMS32_DESC_LONG_DX.txt")  // read icd9 definitions into dict
         /*f = open(os.path.join(directory,filename), "w")
         total_for_all = 0
         for key, value in codes.iteritems():

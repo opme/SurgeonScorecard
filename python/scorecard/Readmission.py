@@ -215,7 +215,7 @@ class Readmission:
             os.makedirs(directory)
         if primary_only:
             # look only for icd codes that are primary inpatient
-            icd_all = self.icdGroupingPrimary(self.data).toPandas()
+            icd_all = self.icdGroupingPrimary(sqlContext, self.data, inpatient_condition_primary_diagnosis, inpatient_procedure_primary_diagnosis).toPandas()
         else:
             # look at all icd codes
             icd_all = self.icdGrouping(sqlContext).toPandas()

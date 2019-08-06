@@ -110,7 +110,9 @@ object Utils {
     // read in the cms icd9 description file CMS32_DESC_LONG_DX.txt into a dictionary
     //
     def readFileIcd9(filename: String) : scala.collection.immutable.Map[String,String] = {
-		val file = Source.fromFile(filename).getLines.filter(f => !f.trim.isEmpty)
+	    val stream: InputStream = getClass.getResourceAsStream(filename)
+	    val file: Iterator[String] = scala.io.Source.fromInputStream( stream ).getLines.filter(f => !f.trim.isEmpty)
+		//val file = Source.fromFile(filename).getLines.filter(f => !f.trim.isEmpty)
         val icd9 = file.map(m2 => (m2.split(" ")(0), m2.split(" ")(1))).toMap
         icd9
 	}
@@ -123,6 +125,9 @@ object Utils {
        println("converting " + filename + " to map")
        val stream: InputStream = getClass.getResourceAsStream(filename)
 	   val lines: Iterator[String] = scala.io.Source.fromInputStream( stream ).getLines
+       for (line <- lines) {
+         println(line)
+       }
        val pairs = 
        for {
          line <- lines
@@ -156,10 +161,10 @@ object Utils {
     //  Tables condition_occurrence and procedure_occurrence are global
     //
     def icdGrouping(spark: SparkSession) : DataFrame = { 
-        val icd_co = spark.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE_CO, count(*) COUNT_CO from condition_occurrence group by CONDITION_SOURCE_VALUE")
-        val icd_po = spark.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE_PO, count(*) COUNT_PO from procedure_occurrence group by PROCEDURE_SOURCE_VALUE")
-        var icd_all = icd_co.join(icd_po,col("SOURCE_VALUE_CO") === col("SOURCE_VALUE_PO"), "outer").na.fill(0)
-        //icd_all = icd_all.withColumn("COUNT", icd_all.COUNT_CO + icd_all.COUNT_PO)
+        val icd_co = spark.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO from condition_occurrence group by CONDITION_SOURCE_VALUE")
+        val icd_po = spark.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO from procedure_occurrence group by PROCEDURE_SOURCE_VALUE")
+		var icd_all = icd_co.join(icd_po,Seq("SOURCE_VALUE"),"outer").na.fill(0)
+        icd_all = icd_all.withColumn("COUNT", col("COUNT_CO") + col("COUNT_PO"))
         icd_all
     }
 	
@@ -168,15 +173,19 @@ object Utils {
     //  For a particular icd code, count the number of principal admission diagnosis codes for patients 
     //  undergoing each of the procedures.icd
     //
-    def icdGroupingPrimary(data: collection.mutable.Map[String, DataFrame], conditionCodes: List[String], procedureCodes: List[String]) : DataFrame = {
-        val icd_co = Utils.filterDataframeByCodes(data("condition_occurrence"),
+    def icdGroupingPrimary(spark: SparkSession, data: collection.mutable.Map[String, DataFrame], conditionCodes: List[String], procedureCodes: List[String]) : DataFrame = {
+        var icd_co = Utils.filterDataframeByCodes(data("condition_occurrence"),
                 conditionCodes,
                 "CONDITION_TYPE_CONCEPT_ID")
-        val icd_po = Utils.filterDataframeByCodes(data("procedure_occurrence"),
+        var icd_po = Utils.filterDataframeByCodes(data("procedure_occurrence"),
                 procedureCodes,
                 "PROCEDURE_TYPE_CONCEPT_ID")
-        var icd_all = icd_co.join(icd_po,col("icd_co.SOURCE_VALUE") === col("icd_po.SOURCE_VALUE"), "outer").na.fill(0)
-        //icd_all = icd_all.withColumn('COUNT', icd_all.COUNT_CO + icd_all.COUNT_PO)
+		icd_co.createOrReplaceTempView("icd_co")
+		icd_po.createOrReplaceTempView("icd_po")
+		icd_co = spark.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO from icd_co group by CONDITION_SOURCE_VALUE")
+		icd_po = spark.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO from icd_po group by PROCEDURE_SOURCE_VALUE")	
+		var icd_all = icd_co.join(icd_po,Seq("SOURCE_VALUE"),"outer").na.fill(0)
+        icd_all = icd_all.withColumn("COUNT", col("COUNT_CO") + col("COUNT_PO"))
         icd_all 
     }
 
