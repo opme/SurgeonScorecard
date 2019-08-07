@@ -12,4 +12,4 @@ rem remove the old datacohort files
 rem rm -r -f ../datacohort/*
 
 rem run main
-python ./src/SurgeonScorecard.py
+python ./scorecard/SurgeonScorecard.py

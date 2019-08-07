@@ -7,4 +7,4 @@ export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.3-src.zip:$PYTHONPATH
 #rm -r -f ../datacohort/*
 
 # run main
-python ./src/SurgeonScorecard.py
+python ./scorecard/SurgeonScorecard.py
