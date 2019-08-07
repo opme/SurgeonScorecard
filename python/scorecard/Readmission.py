@@ -273,7 +273,7 @@ class Readmission:
                 if icd_all[icd_all.SOURCE_VALUE==code].empty:
                     icd_count=0
                 else:
-                    icd_count = icd_all[icd_all.SOURCE_VALUE==code].COUNT.item()
+                    icd_count = icd_all[icd_all.SOURCE_VALUE==code].count.item()
                 total += icd_count
                 if code not in icd_def:
                     icd_description = ""
