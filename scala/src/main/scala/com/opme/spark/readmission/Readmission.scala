@@ -182,8 +182,10 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
     // If primary_only flag is set, only count those icd codes designated as primary inpatient codes
     //
     def writeCodesAndCount(spark: SparkSession, codes: scala.collection.immutable.Map[String,List[String]], directory: String, filename: String, primary_only: Boolean) = {
-        //if not os.path.exists(directory):
-        //    os.makedirs(directory)
+        val dir = new File(directory)
+        if (! dir.exists()){
+            dir.mkdir()
+        }
         var icd_all = spark.emptyDataFrame
 		if (primary_only == true) {
             // look only for icd codes that are primary inpatient
@@ -242,8 +244,10 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
     // find code counts for readmission event
     //
     def writeReadmissionCodesAndCount(spark: SparkSession, codes: scala.collection.immutable.Map[String,List[String]], readmissionDfs: scala.collection.mutable.Map[String,DataFrame], directory: String, filename: String) = {
-        //if not os.path.exists(directory):
-        //    os.makedirs(directory)
+        val dir = new File(directory)
+        if (! dir.exists()){
+            dir.mkdir()
+        }
         val icd_def = Utils.readFileIcd9("/CMS32_DESC_LONG_DX.txt")  // read icd9 definitions into dict
 		val f = new PrintWriter(new File(directory + "/" + filename ))
         var total_for_all = 0
