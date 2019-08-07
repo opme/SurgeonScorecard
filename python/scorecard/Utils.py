@@ -132,23 +132,20 @@ class Utils:
     #  undergoing each of the procedures.
     #
     def icdGroupingPrimary(self, sqlContext, data, conditionCodes, procedureCodes):
-        icd_co = self.filterDataframeByCodes(data['condition_occurrence'],
+        icd_co_temp = self.filterDataframeByCodes(data['condition_occurrence'],
                 conditionCodes,
                 'CONDITION_TYPE_CONCEPT_ID')
-        icd_po = self.utils.filterDataframeByCodes(data['procedure_occurrence'],
+        icd_po_temp = self.filterDataframeByCodes(data['procedure_occurrence'],
                 procedureCodes,
-                'PROCEDURE_TYPE_CONCEPT_ID')
-        icd_co.createOrReplaceTempView(icd_co)
-        icd_po.createOrReplaceTempView(icd_po)
-        icd_co = sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO from icd_co group by CONDITION_SOURCE_VALUE")
-        icd_po = sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO from icd_po group by PROCEDURE_SOURCE_VALUE")
+                'PROCEDURE_TYPE_CONCEPT_ID')		
+        icd_co_temp.registerTempTable('condition_occurrence_primary')
+        icd_po_temp.registerTempTable('procedure_occurrence_primary')
+        icd_co = self.sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO \
+                                    from condition_occurrence_primary group by CONDITION_SOURCE_VALUE")
+        icd_po = self.sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO \
+                                    from procedure_occurrence_primary group by PROCEDURE_SOURCE_VALUE")
         icd_all = icd_co.join(icd_po,'SOURCE_VALUE', how='outer').fillna(0)
         icd_all = icd_all.withColumn('COUNT', icd_all.COUNT_CO + icd_all.COUNT_PO)
-		
-        #icd_co = sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO 
-        #                            from condition_occurrence where CONDITION_TYPE_CONCEPT_ID='38000199' group by CONDITION_SOURCE_VALUE")
-        #icd_po = sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO 
-        #                            from procedure_occurrence where PROCEDURE_TYPE_CONCEPT_ID='38000250' group by PROCEDURE_SOURCE_VALUE")
         return icd_all
 
 

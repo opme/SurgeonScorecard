@@ -171,42 +171,6 @@ class Readmission:
         return df
 
     #
-    #  For a particular icd code, count the number of occurrences
-    #  This is done by summing the count values in condition_occurrence and procedure_occurrence
-    #  Tables condition_occurrence and procedure_occurrence are global
-    #
-    def icdGrouping(self, sqlContext):
-        icd_co = sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO \
-                                    from condition_occurrence group by CONDITION_SOURCE_VALUE")
-        icd_po = sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO \
-                                    from procedure_occurrence group by PROCEDURE_SOURCE_VALUE")
-        icd_all = icd_co.join(icd_po,'SOURCE_VALUE', how='outer').fillna(0)
-        icd_all = icd_all.withColumn('COUNT', icd_all.COUNT_CO + icd_all.COUNT_PO)
-        return icd_all
-
-    #
-    #  For a particular icd code, count the number of principal admission diagnosis codes for patients
-    #  undergoing each of the procedures.
-    #
-    def icdGroupingPrimary(self, data):
-        icd_co_temp = self.utils.filterDataframeByCodes(data['condition_occurrence'],
-                self.inpatient_condition_primary_diagnosis,
-                'CONDITION_TYPE_CONCEPT_ID')
-        icd_po_temp = self.utils.filterDataframeByCodes(data['procedure_occurrence'],
-                self.inpatient_condition_primary_diagnosis,
-                'PROCEDURE_TYPE_CONCEPT_ID')
-        icd_co_temp.registerTempTable('condition_occurrence_primary')
-        icd_po_temp.registerTempTable('procedure_occurrence_primary')
-        icd_co = self.sqlContext.sql("select CONDITION_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_CO \
-                                    from condition_occurrence_primary group by CONDITION_SOURCE_VALUE")
-        icd_po = self.sqlContext.sql("select PROCEDURE_SOURCE_VALUE SOURCE_VALUE, count(*) COUNT_PO \
-                                    from procedure_occurrence_primary group by PROCEDURE_SOURCE_VALUE")
-        icd_all = icd_co.join(icd_po,'SOURCE_VALUE', how='outer').fillna(0)
-        icd_all = icd_all.withColumn('COUNT', icd_all.COUNT_CO + icd_all.COUNT_PO)
-        return icd_all
-
-
-    #
     # find counts of icd codes
     # If primary_only flag is set, only count those icd codes designated as primary inpatient codes
     #
@@ -215,10 +179,10 @@ class Readmission:
             os.makedirs(directory)
         if primary_only:
             # look only for icd codes that are primary inpatient
-            icd_all = self.icdGroupingPrimary(sqlContext, self.data, self.inpatient_condition_primary_diagnosis, self.inpatient_procedure_primary_diagnosis).toPandas()
+            icd_all = self.utils.icdGroupingPrimary(sqlContext, self.data, self.inpatient_condition_primary_diagnosis, self.inpatient_procedure_primary_diagnosis).toPandas()
         else:
             # look at all icd codes
-            icd_all = self.icdGrouping(sqlContext).toPandas()
+            icd_all = self.utils.icdGrouping(sqlContext).toPandas()
         icd_def = self.utils.readFileIcd9('icd/icd9/CMS32_DESC_LONG_DX.txt')  # read icd9 definitions into dict
         f = open(os.path.join(directory,filename), "w")
         total_for_all = 0
