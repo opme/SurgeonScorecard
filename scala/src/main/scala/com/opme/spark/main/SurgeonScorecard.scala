@@ -33,7 +33,7 @@ object SurgeonScorecard {
 	 .master("local")
      .appName("SurgeonScorecard")
      .getOrCreate()
-	 
+	
     // read in the data
     var data = Utils.loadRawData(spark, datadir)
 
@@ -54,15 +54,16 @@ object SurgeonScorecard {
 	
     // calculate statistics related to codes
     // write a file with counts of all diagnostic icd codes
-    readmit.writeCodesAndCount(readmit.diagnostic_codes, resultdir, "procedure_count_all.txt", false)
+    readmit.writeCodesAndCount(spark, readmit.diagnostic_codes, resultdir, "procedure_count_all.txt", false)
     // write a file with counts of all diagnostic icd codes where the code is primary
-    readmit.writeCodesAndCount(readmit.diagnostic_codes, resultdir, "procedure_count_primary.txt", true)
+    readmit.writeCodesAndCount(spark, readmit.diagnostic_codes, resultdir, "procedure_count_primary.txt", true)
     // write a file with counts of all readmission icd codes
-    readmit.writeCodesAndCount(readmit.readmission_codes, resultdir, "readmission_count_all.txt", false)
+    readmit.writeCodesAndCount(spark, readmit.readmission_codes, resultdir, "readmission_count_all.txt", false)
     // write a file with counts of all readmission icd codes where the code is primary
-    readmit.writeCodesAndCount(readmit.readmission_codes, resultdir, "readmission_count_primary.txt", true)
+    readmit.writeCodesAndCount(spark, readmit.readmission_codes, resultdir, "readmission_count_primary.txt", true)
     // write a file with counts of readmission events by code
-    readmit.writeReadmissionCodesAndCount( 
+    readmit.writeReadmissionCodesAndCount(
+	    spark,
         readmit.readmission_codes, 
         readmit.readmissionDfs, 
         resultdir, 

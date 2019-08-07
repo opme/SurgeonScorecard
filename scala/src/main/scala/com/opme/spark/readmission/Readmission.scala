@@ -6,11 +6,13 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
 import com.opme.spark.utils.Utils
+import java.io._
 
 class Readmission(spark: SparkSession, data: collection.mutable.Map[String, DataFrame], config: Config) {
     //
     // Detect readmission given a set of data in OMOP format
     //
+	import spark.implicits._
     val env = "scorecard"
     val date_input_format = config.getString(env + ".date_input_format")
     val readmission_days = config.getString(env + ".readmission_days")
@@ -24,7 +26,6 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
     val icd_readmission = config.getString(env + ".icd_readmission")
     val inpatient_condition_primary_diagnosis = config.getString(env + ".inpatient_condition_primary_diagnosis").split(',').toList
     val inpatient_procedure_primary_diagnosis =  config.getString(env + ".inpatient_procedure_primary_diagnosis").split(',').toList
-
 
     // find readmission patients based on criteria in the properties file
     var (readmissionDfs,providerProcedureInfoDfs,deaths) = readmissionPatients(data, config, diagnostic_codes, readmission_codes)
@@ -180,8 +181,7 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
     // find counts of icd codes
     // If primary_only flag is set, only count those icd codes designated as primary inpatient codes
     //
-	// removed topandas() need alternative
-    def writeCodesAndCount(codes: scala.collection.immutable.Map[String,List[String]], directory: String, filename: String, primary_only: Boolean) = {
+    def writeCodesAndCount(spark: SparkSession, codes: scala.collection.immutable.Map[String,List[String]], directory: String, filename: String, primary_only: Boolean) = {
         //if not os.path.exists(directory):
         //    os.makedirs(directory)
         var icd_all = spark.emptyDataFrame
@@ -193,30 +193,38 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
             icd_all = Utils.icdGrouping(spark)
 		}	
         val icd_def = Utils.readFileIcd9("/CMS32_DESC_LONG_DX.txt")  // read icd9 definitions into dict
-        /*f = open(os.path.join(directory,filename), "w")
-        total_for_all = 0
-        for key, value in codes.iteritems():
+		val f = new PrintWriter(new File(directory + "/" + filename ))
+        var total_for_all = 0
+		for ((key,value) <- codes) {
             f.write("Procedure: " + key + "\n")
             f.write("code, count, description\n")
-            total = 0
-            for code in value:
-                if icd_all[icd_all.SOURCE_VALUE==code].empty:
-                    icd_count=0
-                else:
-                    icd_count = icd_all[icd_all.SOURCE_VALUE==code].COUNT.item()
+            var total = 0
+			for (code <- value) {
+			    var icd_count=0
+				if (icd_all.filter($"SOURCE_VALUE".contains(code)).isEmpty) {
+				    icd_count=0
+				}
+                else {
+                    icd_count = icd_all.filter($"SOURCE_VALUE".contains(code)).count().toInt
+				}
                 total += icd_count
-                if code not in icd_def:
+				var icd_description = ""
+                if (!icd_def.contains(code)) {
                     icd_description = ""
-                else:
-                    icd_description = icd_def[code]
-                outstring = code + "," + str(icd_count) + "," + icd_description + "\n"
+				}	
+                else {
+                    icd_description = icd_def(code)
+				}	
+                val outstring = code + "," + icd_count.toString + "," + icd_description + "\n"
                 f.write(outstring)
-            totalString = "Total Count For This procedure: " + str(total) + "\n\n"
+			}	
+            val totalString = "Total Count For This procedure: " + total.toString + "\n\n"
             f.write(totalString)
             total_for_all += total
-        totalForAllString = "Total Count For All Procedures: " + str(total_for_all) + "\n"
+		}	
+        val totalForAllString = "Total Count For All Procedures: " + total_for_all.toString + "\n"
         f.write(totalForAllString)
-        f.close() */
+        f.close
     }
 	
     //
@@ -224,7 +232,7 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
     //  This is done by summing the count values in condition_occurrence and procedure_occurrence
     //  Tables condition_occurrence and procedure_occurrence are global
     //
-    def readmissionGrouping(readmission: DataFrame) : DataFrame = {
+    def readmissionGrouping(spark: SparkSession, readmission: DataFrame) : DataFrame = {
         readmission.registerTempTable("readmission")
         val icd_count = spark.sql("select SOURCE_VALUE, count(*) COUNT from readmission group by SOURCE_VALUE")
         icd_count
@@ -233,34 +241,42 @@ class Readmission(spark: SparkSession, data: collection.mutable.Map[String, Data
     //
     // find code counts for readmission event
     //
-    def writeReadmissionCodesAndCount(codes: scala.collection.immutable.Map[String,List[String]], readmissionDfs: scala.collection.mutable.Map[String,DataFrame], directory: String, filename: String) = {
+    def writeReadmissionCodesAndCount(spark: SparkSession, codes: scala.collection.immutable.Map[String,List[String]], readmissionDfs: scala.collection.mutable.Map[String,DataFrame], directory: String, filename: String) = {
         //if not os.path.exists(directory):
         //    os.makedirs(directory)
         val icd_def = Utils.readFileIcd9("/CMS32_DESC_LONG_DX.txt")  // read icd9 definitions into dict
-        /*f = open(os.path.join(directory,filename), "w")
-        total_for_all = 0
-        for key, value in codes.iteritems():
-            icd_all = readmissionGrouping(sqlContext, readmissionDfs[key]).toPandas()
+		val f = new PrintWriter(new File(directory + "/" + filename ))
+        var total_for_all = 0
+		for ((key,value) <- codes) {
+		    val icd_all = readmissionGrouping(spark, readmissionDfs(key))
             f.write("Procedure: " + key + "\n")
             f.write("code, count, description\n")
-            total = 0
-            for code in value:
-                if icd_all[icd_all.SOURCE_VALUE==code].empty:
-                    icd_count=0
-                else:
-                    icd_count = icd_all[icd_all.SOURCE_VALUE==code].COUNT.item()
+            var total = 0
+			for (code <- value) {
+			    var icd_count=0
+				if (icd_all.filter($"SOURCE_VALUE".contains(code)).isEmpty) {
+				    icd_count=0
+				}
+                else {
+                    icd_count = icd_all.filter($"SOURCE_VALUE".contains(code)).count().toInt
+				}
                 total += icd_count
-                if code not in icd_def:
+				var icd_description = ""
+                if (!icd_def.contains(code)) {
                     icd_description = ""
-                else:
-                    icd_description = icd_def[code]
-                outstring = code + "," + str(icd_count) + "," + icd_description + "\n"
+				}	
+                else {
+                    icd_description = icd_def(code)
+				}	
+                val outstring = code + "," + icd_count.toString + "," + icd_description + "\n"
                 f.write(outstring)
-            totalString = "Total Count For This procedure: " + str(total) + "\n\n"
+			}	
+            val totalString = "Total Count For This procedure: " + total.toString + "\n\n"
             f.write(totalString)
             total_for_all += total
-        totalForAllString = "Total Count For All Procedures: " + str(total_for_all) + "\n"
+		}	
+        val totalForAllString = "Total Count For All Procedures: " + total_for_all.toString + "\n"
         f.write(totalForAllString)
-        f.close() */
+        f.close		
 	}	
 }
